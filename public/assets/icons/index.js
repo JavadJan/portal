@@ -11,8 +11,14 @@ import star from './star.svg'
 import truckFast from './truck-fast.svg'
 import twitter from './twitter.svg'
 import times from './times.png'
+import close from './close.svg'
+import menu from './menu.svg'
+import code from './code.svg'
 
 export {
+    code,
+    close,
+    menu,
     times,
     arrowRight,
     cheveronRight,
@@ -25,5 +31,6 @@ export {
     shieldTick,
     star,
     truckFast,
-    twitter
+    twitter,
+
 }

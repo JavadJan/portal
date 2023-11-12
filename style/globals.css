@@ -18,6 +18,92 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+  .gradient {
+    background: rgb(31,38,65);
+    background: linear-gradient(0deg, rgba(31,38,65,1) 0%, rgba(31,38,65,1) 30%, rgba(43,54,93,1) 58%, rgba(53,66,120,1) 81%, rgba(54,71,136,1) 87%, rgba(83,105,194,1) 100%);
+  }
+  .gradient-green {
+    background: rgb(0, 51, 0);
+background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, rgba(0, 77, 0, 1) 58%, rgba(0, 102, 0, 1) 81%, rgba(0, 107, 0, 1) 87%, rgba(0, 128, 0, 1) 100%);
+
+  }
+  .gradient_black {
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(31,31,33,1) 30%, rgba(38,38,40,1) 58%, rgba(39,40,41,1) 75%, rgba(49,50,52,1) 86%, rgba(86,89,102,1) 100%);
+    
+  }
+
+
+  html{
+    @apply snap-mandatory snap-y scroll-smooth
+  }
+  .section{
+    @apply h-[80vh] snap-center
+  }
+
+  /* circle */
+  .glassy-circle {
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    left:58%;
+    border: 1px;
+    @apply max-lg:hidden 
+  }
+
+  .menu_li{
+    background-color:#0478e4;
+    padding:7px 10px ;
+    border-radius:20px;
+  }
+  .menu_li:nth-child(1){
+    position:absolute;
+    list-style:none;
+    top:30px;
+    right:10%;
+  }
+  .menu_li:nth-child(2){
+    position:absolute;
+    list-style:none;
+    top:70px;
+    right:15%;
+  }
+  .menu_li:nth-child(3){
+    position:absolute;
+    list-style:none;
+    top:120px;
+    right:20%;
+  }
+  .menu_li:nth-child(5){
+    position:absolute;
+    list-style:none;
+    top:220px;
+    right:30%;
+  }
+  .menu_li:nth-child(4){
+    position:absolute;
+    list-style:none;
+    top:170px;
+    right:25%;
+    
+  }
+  
+  .stick {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .scroll_active {
+    @apply text-black bg-white-400 w-full
+  }
 
   .input {
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
@@ -30,13 +116,18 @@
   }
 
   .animate{
-    @apply duration-500 delay-300 ease-in-out
+    @apply duration-500 delay-300 ease-in-out;
+    
   }
 }
 
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
+    
+  }
+  .padding-profile {
+    @apply pb-0 sm:px-16 px-8 sm:pt-24 pt-12 ;
   }
 
   .padding-x {

@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontSize: {
@@ -37,8 +40,9 @@ module.exports = {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
       },
       backgroundImage: {
-        'hero': "url('/assets/images/collection-background.svg')",
-        'card': "url('/assets/images/thumbnail-background.svg')",
+        'profile': "url('/assets/images/bg-profile.jpg')",
+        'javad': "url('/assets/images/j3.png')",
+        'dream': "url('/assets/images/dream.jpeg')",
       },
       screens: {
         "wide": "1440px"
