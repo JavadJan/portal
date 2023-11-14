@@ -9,15 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.88.14",
+    "@react-three/fiber": "^8.15.11",
     "firebase": "^10.5.2",
     "framer-motion": "^10.16.4",
+    "framer-motion-3d": "^10.16.5",
     "mongodb": "^6.2.0",
     "mongoose": "^8.0.0",
     "next": "13.5.2",
+    "popmotion": "^11.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-flag-kit": "^1.1.1",
-    "react-loading-skeleton": "^3.3.1"
+    "react-loading-skeleton": "^3.3.1",
+    "react-use-measure": "^2.1.1",
+    "three": "^0.158.0"
   },
   "devDependencies": {
     "@types/react": "18.2.33",

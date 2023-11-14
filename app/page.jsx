@@ -41,20 +41,20 @@ const Home = () => {
                         <section id="home" className="snap-start w-full bg-[#2B1F31] relative top-0 text-white-400">
                             <Profile />
                         </section>
-                        <section id="skills" className='section padding'>
+                        <section id="skills" className='snap-start section padding bg-[#1A120B] h-[50vh]'>
                             <Skills />
                         </section>
-                        <section id="project" className='section bg-pale-blue padding'>
+                        <section id="project" className='snap-center section bg-pale-blue padding'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="section padding">
+                        <section id="contact-me" className="snap-center section padding">
                             <ContactMe />
                         </section>
-                        <section id="about-me" className="section padding">
+                        <section id="about-me" className="snap-center section padding">
                             <AboutMe />
                         </section>
 
-                        <section id="footer" className='section padding bg-black padding-t padding-x pb-8'>
+                        <section id="footer" className='snap-start section padding bg-black padding-t padding-x pb-8'>
                             <Footer />
                         </section>
                     </>
