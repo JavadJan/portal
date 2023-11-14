@@ -17,14 +17,25 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
       }
     },
     closed: {
+      clipPath: "circle(0px at 10px 10px)",
       transition: {
         delay: 0.7,
         opacity: 0,
         type: "spring",
         stiffness: 400,
-        damping: 40
+        damping: 40,
+        duration: 1,
       }
     }
+  }
+
+  const variantParent = {
+    open: { transition: { staggerChildren: 0.1 } },
+    closed: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
+  }
+  const variantItems = {
+    open: { y: 0, opacity: 1 },
+    closed: { y: 50, opacity: 0 }
   }
 
   return (
@@ -37,21 +48,23 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
 
       {<motion.ul
         className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4 flex max-md:justify-center max-sm:justify-start flex-col right-1`}
-
+        variants={variantParent}
+        animate={dropDown ? 'open' : 'closed'}
       >
         {(!lang && menuEn && menuDe) ?
           menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item, i) => {
             return (<motion.li
               key={item.lable}
               className='hover:bg-[#0478e4] max-lg:w-full max-sm:w-[45%] px-5 py-2 rounded-lg'
-              initial={{ scale: 1 }}
+              initial={{ scale: 1, }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
+              variants={variantItems}
+              animate={dropDown ? 'open' : 'closed'}
             >
               <a
                 href={item.href}
-                className=''>{item.lable}
-
+                className='block max-lg:w-full max-lg:h-full'>{item.lable}
               </a>
             </motion.li>)
           })
@@ -63,8 +76,10 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
+              variants={variantItems}
+              animate={dropDown ? 'open' : 'closed'}
             >
-              <a href={item.href}>{item.lable}</a>
+              <a href={item.href} className='block max-lg:w-full max-lg:h-full'>{item.lable}</a>
             </motion.li>)
           })}
         <div className="cursor-pointer space-y-2" onClick={handleLang}>
@@ -77,7 +92,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
           > <FlagIcon code="DE" height={15} width={30} />DE
           </motion.span> :
             <motion.span
-              className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] w-[45%] px-5 py-2 rounded-lg"
+              className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] max-sm:w-[45%] px-5 py-2 rounded-lg"
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}

@@ -44,7 +44,7 @@ const Home = () => {
                         <section id="skills" className='section padding'>
                             <Skills />
                         </section>
-                        <section id="projects" className='section bg-pale-blue padding'>
+                        <section id="project" className='section bg-pale-blue padding'>
                             <Projects />
                         </section>
                         <section id="contact-me" className="section padding">

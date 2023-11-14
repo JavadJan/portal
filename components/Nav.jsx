@@ -20,12 +20,11 @@ const Nav = () => {
     }
 
     const variants = {
-        visible: {
+        open: {
             opacity: 1,
-            x: 100,
-            transition: { staggerChildren: 0.5 },
+            transition: { staggerChildren: 0.5 , duration:1 },
         },
-        hidden: { opacity: 0 }
+        closed: { opacity: 0 }
 
     }
 
@@ -65,7 +64,7 @@ const Nav = () => {
                     :
                     menuDe.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
                         return (<li key={item.lable}>
-                            <a href={item.href} className="hover:text-[#F2BE22]">{item.lable}</a>
+                            <a href={item.href} className="hover:text-[#F2BE22] w-full">{item.lable}</a>
                         </li>)
                     })}
                 <div className="cursor-pointer space-y-2" onClick={handleLang}>
@@ -76,27 +75,42 @@ const Nav = () => {
             </motion.ul>}
             {dropDown && <NavMenu menuDe={menuDe} menuEn={menuEn} lang={lang} handleLang={handleLang} dropDown={dropDown} />}
             <div className={`max-lg:block hidden cursor-pointer z-30 ${dropDown && "hover:bg-[#0478e4] p-2 rounded-lg"}`} onClick={() => setDropDown(!dropDown)}>
-                <Image
-                    src={menu}
-                    width={40}
-                    height={40}
-                    alt="hamburger list"
-                    className={`text-white-400 ${!dropDown
-                        ? 'transition duration-300 ease-in-out opacity-100'
-                        : 'transition duration-300 ease-in-out opacity-0'
-                        } ${dropDown ? 'hidden' : 'inline-block'}`}
-                />
+                <svg width="23" height="23" viewBox="0 0 23 23" className="text-white">
+                    <motion.path
+                        strokeWidth="3"
+                        stroke="white"
+                        strokeLinecap="round"
+                        variants={{
+                            closed: { d: "M 2 2.5 L 20 2.5" },
+                            open: { d: "M 3 16.5 L 17 2.5" },
+                        }}
+                        animate={dropDown ? "open" : "closed"}
+                    />
+                    <motion.path
+                        strokeWidth="3"
+                        stroke="white"
+                        strokeLinecap="round"
+                        d="M 2 9.423 L 20 9.423"
+                        variants={{
+                            closed: { opacity: 1 },
+                            open: { opacity: 0 },
+                        }}
+                        animate={dropDown ? "open" : "closed"}
 
-                <Image
-                    src={close}
-                    width={40}
-                    height={40}
-                    alt="times"
-                    className={`${dropDown
-                        ? 'transition duration-300 ease-in-out opacity-100'
-                        : 'transition duration-300 ease-in-out opacity-0'
-                        } ${dropDown ? 'inline-block' : 'hidden'}`}
-                />
+                    />
+                    <motion.path
+                        strokeWidth="3"
+                        stroke="white"
+                        strokeLinecap="round"
+                        variants={{
+                            closed: { d: "M 2 16.346 L 20 16.346" },
+                            open: { d: "M 3 2.5 L 17 16.346" },
+                        }}
+                        animate={dropDown ? "open" : "closed"}
+
+                    />
+                </svg>
+                
             </div>
 
         </nav>
