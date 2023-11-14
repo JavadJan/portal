@@ -1,5 +1,5 @@
 import Button from '@/components/Button'
-import { java } from '@public/assets/images'
+import { javad } from '@public/assets/images'
 import Image from 'next/image'
 import React, { useContext, useEffect, useState } from 'react'
 import { motion } from "framer-motion";
@@ -65,7 +65,7 @@ const Profile = () => {
                     whileInView={{ opacity: 1, scale: 0.5 }}
                     transition={{ duration: 3 }}
                 ></motion.div>
-                <Image src={java} width={500} height={500} alt='' className='object-cover z-20' />
+                <Image src={javad} width={500} height={500} alt='' className='object-cover z-20' />
             </div>
         </section >
     )

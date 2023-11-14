@@ -21,10 +21,10 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
         fontSize: '34px'
     }
 
-    const htmlPosition = [3.1, 2.8, -3.5]
-    const cssPosition = [-3.8, 2.1, 0]
-    const jsPosition = [-2.5, 0, 0]
-    const nodePosition = [2.1, 0, -1]
+    const htmlPosition = [2.1, 2, -2.5]
+    const cssPosition = [-2.8, 2.1, 0]
+    const jsPosition = [-3.5, 0, 0]
+    const nodePosition = [2, 0, -1]
 
     return (
         <Canvas shadows dpr={[1, 2]} resize={{ scroll: false, offsetSize: true }}>
