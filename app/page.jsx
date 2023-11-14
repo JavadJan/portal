@@ -1,7 +1,6 @@
 "use client"
 import Nav from "@components/Nav"
 import { UserContext } from "@context/Provider"
-// import Nav from "@components/Nav"
 import AboutMe from "@sections/AboutMe"
 import ContactMe from "@sections/ContactMe"
 import Footer from "@sections/Footer"

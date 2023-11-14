@@ -1,13 +1,9 @@
 import Button from '@/components/Button'
-import { javad1 } from '@public/assets/images'
-import { javad2 } from '@public/assets/images'
-import { javad } from '@public/assets/images'
 import { java } from '@public/assets/images'
 import Image from 'next/image'
 import React, { useContext, useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import { UserContext } from "@context/Provider";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 
 const Profile = () => {

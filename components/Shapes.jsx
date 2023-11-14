@@ -18,13 +18,13 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
 
     const html = {
         color: 'red',
-        fontSize: '24px'
+        fontSize: '34px'
     }
 
-    const htmlPosition = [3.1, 1, -3.5]
-    const cssPosition = [-2.8, 1.4, 0]
-    const jsPosition = [-2.5, -1.5, 0]
-    const nodePosition = [2.1, -1, -1]
+    const htmlPosition = [3.1, 2.8, -3.5]
+    const cssPosition = [-3.8, 2.1, 0]
+    const jsPosition = [-2.5, 0, 0]
+    const nodePosition = [2.1, 0, -1]
 
     return (
         <Canvas shadows dpr={[1, 2]} resize={{ scroll: false, offsetSize: true }}>
@@ -49,7 +49,7 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
                     <Torus />
                     <Icosahedron /> */}
 
-                    <Word text="HTML" variants={wordVariants} pos={htmlPosition} style={{ html }} color="#2B3595" fontSize={`${window.screen > 480 ? 1 : 0.6}`} />
+                    <Word text="HTML" variants={wordVariants} pos={htmlPosition} color="#2B3595" fontSize={`${window.screen > 480 ? 2 : 0.6}`} />
                     <Word text="CSS" variants={wordVariants} pos={cssPosition} color="#102C57" fontSize={`${window.screen > 480 ? 1 : 0.6}`} />
                     <Word text="JavaScript" variants={wordVariants} pos={jsPosition} color="#FAC213" fontSize={`${window.screen > 480 ? 1.2 : 0.7}`} />
                     <Word text="Node.js" variants={wordVariants} pos={nodePosition} color="#00541A" fontSize={`${window.screen > 480 ? 1 : 0.6}`} />
@@ -67,6 +67,7 @@ export function Word({ text, variants, pos, color, fontSize }) {
                 position={pos}
                 fontSize={fontSize}
                 color={color}
+                fontWeight="bold"
                 variants={{
                     hover: {
                         x: 1.8,
