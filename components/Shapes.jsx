@@ -71,9 +71,9 @@ export function Word({ text, variants, pos, color, fontSize }) {
                 variants={{
                     hover: {
                         x: 1.8,
-                        z: 1.4,
+                        z: 0.4,
                         y: 0.4,
-                        rotateZ: -0.5
+                        rotateZ: -1.5
                     }
                 }}
             >

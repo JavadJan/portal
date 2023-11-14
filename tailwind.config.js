@@ -35,6 +35,9 @@ module.exports = {
         "color-danger": "#f75842",
         "color-warning": "#f7c94b",
         "color": "#57370d",
+        "green-light":"#28DF99",
+        "yellow-light":"#FFC75F",
+
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'

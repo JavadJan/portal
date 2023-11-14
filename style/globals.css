@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 @layer components {
@@ -38,7 +38,7 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
     @apply snap-mandatory snap-y scroll-smooth
   }
   .section{
-    @apply h-[80vh] snap-center
+    @apply h-[80vh]
   }
 
   /* circle */

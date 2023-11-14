@@ -34,13 +34,13 @@ const Home = () => {
                     </div>
                     :
                     <>
-                        <section className={`px-28 snap-start max-lg:px-[3%] w-[100%] bg-[#2B1F31] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
+                        <section className={`snap-start px-28max-lg:px-[3%] w-[100%] bg-[#160F30] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className="snap-start w-full bg-[#2B1F31] relative top-0 text-white-400">
+                        <section id="home" className="snap-center w-full bg-[#160F30] relative top-0 text-white-400">
                             <Profile />
                         </section>
-                        <section id="skills" className='snap-start section padding bg-[#1A120B] h-[50vh]'>
+                        <section id="skills" className='snap-center section padding bg-yellow-light h-[50vh]'>
                             <Skills />
                         </section>
                         <section id="project" className='snap-center section bg-pale-blue padding'>
@@ -53,7 +53,7 @@ const Home = () => {
                             <AboutMe />
                         </section>
 
-                        <section id="footer" className='snap-start section padding bg-black padding-t padding-x pb-8'>
+                        <section id="footer" className='snap-center section padding bg-black padding-t padding-x pb-8'>
                             <Footer />
                         </section>
                     </>
