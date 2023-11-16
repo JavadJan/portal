@@ -29,18 +29,18 @@ const Home = () => {
         <main className="relative">
             {
                 !de && !en ?
-                    <div className="flex justify-center items-center w-full h-[100vh">
+                    <div className="flex justify-center items-center h-[100vh">
                         Loading...
                     </div>
                     :
                     <>
-                        <section className={`snap-start px-28max-lg:px-[3%] w-[100%] bg-[#160F30] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
+                        <section className={`px-28 max-lg:px-[3%] w-[100%] bg-[#160F30] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className="snap-center w-full bg-[#160F30] relative top-0 text-white-400">
+                        <section id="home" className="snap-center bg-[#160F30] relative top-0 text-white-400">
                             <Profile />
                         </section>
-                        <section id="skills" className='snap-center section padding bg-yellow-light h-[50vh]'>
+                        <section id="skills" className='snap-center section padding bg-yellow-light h-[55vh] max-sm:h-[45vh]'>
                             <Skills />
                         </section>
                         <section id="project" className='snap-center section bg-pale-blue padding'>

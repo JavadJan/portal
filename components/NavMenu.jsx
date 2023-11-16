@@ -29,18 +29,18 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
     }
   }
 
-  const variantParent = {
-    open: { transition: { staggerChildren: 0.1 } },
-    closed: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
-  }
-  const variantItems = {
-    open: { y: 0, opacity: 1 },
-    closed: { y: 50, opacity: 0 }
-  }
+  // const variantParent = {
+  //   open: { transition: { staggerChildren: 0.1 } },
+  //   closed: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
+  // }
+  // const variantItems = {
+  //   open: { y: 0, opacity: 1 },
+  //   closed: { y: 50, opacity: 0 }
+  // }
 
   return (
     <motion.div
-      className='w-1/3 justify-center py-14 absolute p-10 z-20 shadow-2xl bg-opacity-40 top-16 right-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-[#1A120B]'
+      className='w-1/3 max-md:w-full justify-center py-14 absolute p-10 z-20 shadow-2xl bg-opacity-40 top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-[#1A120B]'
       // initial={{ opacity: 0.5, scale: 0.7, clipPath: "circle(530px at 10px 10px)" }}
       variants={variants}
       animate={dropDown ? "open" : "closed"}
@@ -48,8 +48,6 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
 
       {<motion.ul
         className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4 flex max-md:justify-center max-sm:justify-start flex-col right-1`}
-        variants={variantParent}
-        animate={dropDown ? 'open' : 'closed'}
       >
         {(!lang && menuEn && menuDe) ?
           menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item, i) => {
@@ -59,8 +57,6 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
               initial={{ scale: 1, }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              variants={variantItems}
-              animate={dropDown ? 'open' : 'closed'}
             >
               <a
                 href={item.href}
@@ -76,8 +72,6 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
-              variants={variantItems}
-              animate={dropDown ? 'open' : 'closed'}
             >
               <a href={item.href} className='block max-lg:w-full max-lg:h-full'>{item.lable}</a>
             </motion.li>)

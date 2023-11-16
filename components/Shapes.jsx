@@ -22,9 +22,16 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
     }
 
     const htmlPosition = [2.1, 2, -2.5]
-    const cssPosition = [-2.8, 2.1, 0]
-    const jsPosition = [-3.5, 0, 0]
+    const cssPosition = [-3.8, 2.1, 0]
+    const jsPosition = [-2.5, 0, 0]
     const nodePosition = [2, 0, -1]
+    const nextPosition = [-2.3, -1.5, 1]
+    const mongoPosition = [3.3, 3, -1]
+    const firebasePosition = [-1.3, 1, 1]
+    const pythonPosition = [3, -1, 1]
+    const tailwindPosition = [-4, 5, -3]
+    const graphQLPosition = [1, -1.5, 1]
+
 
     return (
         <Canvas shadows dpr={[1, 2]} resize={{ scroll: false, offsetSize: true }}>
@@ -41,26 +48,29 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
                     animate={isHover ? "hover" : "rest"}
                     dispose={null}
                     variants={{
-                        hover: { z: isPress ? -0.9 : 0 }
+                        hover: { z: isPress ? -0.8 : 0 }
                     }}
                 >
-                    {/* <Sphere />
-                    <Cone />
-                    <Torus />
-                    <Icosahedron /> */}
 
-                    <Word text="HTML" variants={wordVariants} pos={htmlPosition} color="#2B3595" fontSize={`${window.screen > 480 ? 2 : 0.6}`} />
-                    <Word text="CSS" variants={wordVariants} pos={cssPosition} color="#102C57" fontSize={`${window.screen > 480 ? 1 : 0.6}`} />
-                    <Word text="JavaScript" variants={wordVariants} pos={jsPosition} color="#FAC213" fontSize={`${window.screen > 480 ? 1.2 : 0.7}`} />
-                    <Word text="Node.js" variants={wordVariants} pos={nodePosition} color="#00541A" fontSize={`${window.screen > 480 ? 1 : 0.6}`} />
+                    <Word text="HTML" variants={wordVariants} pos={window.innerWidth > 480 ? htmlPosition : htmlPosition.map((el) => el < 0.1 ? el + 0.5 : el - 0.3)} color="#2B3595" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="CSS" variants={wordVariants} pos={window.innerWidth > 480 ? cssPosition : cssPosition.map((el) => el < 0.1 ? el + 1.5 : el - 1.5)} color="#102C57" fontSize={`${window.innerWidth > 480 ? 1 : 0.4}`} />
+                    <Word text="JavaScript" variants={wordVariants}
+                        pos={window.innerWidth > 480 ? jsPosition : jsPosition.map((el) => el < 0.1 ? el + 4 : el - 0.5)} color="#FAC213" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="Node.js" variants={wordVariants} pos={window.innerWidth > 480 ? nodePosition : nodePosition.map((el) => el < 0.1 ? el + 0.5 : el - 0.3)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="Next.js" variants={wordVariants} pos={window.innerWidth > 480 ? nextPosition : nextPosition.map((el) => el < 0.1 ? el + 0.5 : el - 2)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="mongoDB" variants={wordVariants} pos={window.innerWidth > 480 ? mongoPosition : mongoPosition.map((el) => el < 0.1 ? el + 3.5 : el - 0.3)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="Firebase" variants={wordVariants} pos={window.innerWidth > 480 ? firebasePosition : firebasePosition.map((el) => el < 0.1 ? el + 3.5 : el - 2.3)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="Python" variants={wordVariants} pos={window.innerWidth > 480 ? pythonPosition : pythonPosition.map((el) => el < 0.1 ? el + 0.5 : el - 0.5)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="Tailwind" variants={wordVariants} pos={window.innerWidth > 480 ? tailwindPosition : tailwindPosition.map((el) => el < 0.1 ? el + 4.5 : el - 3.5)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
+                    <Word text="graphQL" variants={wordVariants} pos={window.innerWidth > 480 ? graphQLPosition : graphQLPosition.map((el) => el < 0.1 ? el + 0.5 : el - 0.5)} color="#00541A" fontSize={`${window.innerWidth > 480 ? 0.5 : 0.4}`} />
                 </motion.group>
             </MotionConfig>
         </Canvas>
     );
 }
 
-export function Word({ text, variants, pos, color, fontSize }) {
 
+export function Word({ text, variants, pos, color, fontSize }) {
     return (
         <motion.group variants={variants}>
             <Text
@@ -70,10 +80,10 @@ export function Word({ text, variants, pos, color, fontSize }) {
                 fontWeight="bold"
                 variants={{
                     hover: {
-                        x: 1.8,
-                        z: 0.4,
-                        y: 0.4,
-                        rotateZ: -1.5
+                        x: window.innerWidth > 480 ? 1.8 : 1.4,
+                        z: window.innerWidth > 480 ? 0.4 : 0.3,
+                        y: window.innerWidth > 480 ? 0.3 : 0.2,
+                        rotateZ: window.innerWidth > 480 ? -1.5 : -1.2
                     }
                 }}
             >

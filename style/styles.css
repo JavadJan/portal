@@ -1,10 +1,12 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .skills {
   --purple: #db07d1;
   --pink: #f2056f;
   --blue: #61dafb;
-
+  background:red;
   appearance: none;
   border: none;
   cursor: pointer;
@@ -24,6 +26,7 @@
   display: flex;
   align-items: center;
   margin:80px auto;
+  @apply max-sm:px-0 py-2
 }
 
 .shapes {
@@ -62,10 +65,10 @@
 .shapes .container {
   position: absolute;
   top: -100px;
-  bottom: -100px;
-  left: -100px;
+  bottom: -120px;
+  left: -200px;
   right: -100px;
-  width: calc(100% + 300px);
+  width: calc(100% + 400px);
   pointer-events: none;
 }
 
@@ -76,11 +79,12 @@
 }
 
 .label {
-  width: 180px;
+  width: 150px;
   padding: 20px 0;
   transform: translateZ(0);
   font-weight: 700;
   z-index: 1;
+  @apply max-sm:py-2
 }
 
 .default {
