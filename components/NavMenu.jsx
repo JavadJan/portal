@@ -40,14 +40,14 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
 
   return (
     <motion.div
-      className='w-1/3 max-md:w-full justify-center py-14 absolute p-10 z-20 shadow-2xl bg-opacity-40 top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-[#1A120B]'
+      className='w-1/3 max-md:w-full py-16 justify-center absolute px-10 z-20 shadow-2xl bg-opacity-40 top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-[#1A120B]'
       // initial={{ opacity: 0.5, scale: 0.7, clipPath: "circle(530px at 10px 10px)" }}
       variants={variants}
       animate={dropDown ? "open" : "closed"}
     >
 
       {<motion.ul
-        className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4 flex max-md:justify-center max-sm:justify-start flex-col right-1`}
+        className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4 flex  max-sm:justify-start flex-col right-1`}
       >
         {(!lang && menuEn && menuDe) ?
           menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item, i) => {

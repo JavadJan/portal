@@ -22,7 +22,7 @@ const Nav = () => {
     const variants = {
         open: {
             opacity: 1,
-            transition: { staggerChildren: 0.5 , duration:1 },
+            transition: { staggerChildren: 0.5, duration: 1 },
         },
         closed: { opacity: 0 }
 
@@ -47,7 +47,10 @@ const Nav = () => {
 
 
     return (
-        <nav className={`h-16 max-container flex justify-between items-center`}>
+        <motion.nav
+            initial={{ opacity: 0.5 }}
+            transition={{ duration: 1 }}
+            className={`h-16 max-container flex justify-between items-center max-md:flex-row-reverse`}>
             <Image src={code} width={30} height={30} alt="logo" />
             {menuDe && menuEn && <motion.ul
                 className="gap-10 justify-center items-center font-montserrat max-lg:hidden flex"
@@ -110,10 +113,10 @@ const Nav = () => {
 
                     />
                 </svg>
-                
+
             </div>
 
-        </nav>
+        </motion.nav>
     )
 }
 

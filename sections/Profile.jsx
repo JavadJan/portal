@@ -16,6 +16,25 @@ const Profile = () => {
     const percentageX = 0.5; // 50%
     const calculatedX = screenWidth > 1440 ? percentageX * screenWidth : (percentageX - 0.1) * screenWidth;
 
+    const variants = {
+        md: {
+            x: "-250%",
+            transition: {
+                repeat: Infinity,
+                duration: 10,
+                ease: "linear",
+            }
+        },
+        lg: {
+            x: "-150%",
+            transition: {
+                repeat: Infinity,
+                duration: 20,
+                ease: "linear",
+            }
+        }
+    }
+
     useEffect(() => {
         const getLang = async () => {
             try {
@@ -35,12 +54,12 @@ const Profile = () => {
     }, [de, en])
 
     return (
-        <section className='max-container flex justify-between items-center gap-10 max-md:flex-col max-md:gap-0 padding-profile'>
+        <section className='max-container flex justify-between items-center gap-10 max-md:flex-col max-md:gap-0 padding-profile overflow-hidden'>
             {(userEn && userDe) &&
                 < div
                     className='flex-1  flex flex-col gap-5 mt-[90px] z-10' >
                     <h1 className='text-coral-red text-2xl '>{!lang ? userEn.filter((data) => data.id === "user")[0].user.title : userDe.filter((data) => data.id === "user")[0].user.title}</h1>
-                    <p className='font-montserrat'>{!lang ? userEn.filter((data) => data.id === "user")[0].user.desc : userDe.filter((data) => data.id === "user")[0].user.desc}</p>
+                    <p className='font-montserrat ' >{!lang ? userEn.filter((data) => data.id === "user")[0].user.desc : userDe.filter((data) => data.id === "user")[0].user.desc}</p>
                     <div className='flex justify-start gap-6 pb-10'>
                         <Button label='Contact Me' />
                         <motion.span
@@ -59,6 +78,11 @@ const Profile = () => {
                     </div>
                 </div>
             }
+            <motion.p
+                className='absolute ml-4 left-8 text-[150px] bottom-[250px] max-md:bottom-[40%] whitespace-nowrap opacity-5 max-md:text-[70px]'
+                animate={window.innerWidth > 760 ? 'lg' : 'md'}
+                variants={variants}
+            >Innovative Full Stack Developer, fusing ML and software for transformative solutions</motion.p>
             <div className='flex-1 w-full h-[500px] flex justify-center bg-cover bg-center self-end'>
                 <div className='glassy-circle'></div>
                 <motion.div

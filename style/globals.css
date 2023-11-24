@@ -41,6 +41,11 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
     @apply h-[80vh]
   }
 
+  /* .contact-me{
+    display: grid;
+    grid-templete-columns:repeat(auto-fit, minmax(300px , 1fr));
+    grid-auto-rows:6rem;
+  } */
   /* circle */
   .glassy-circle {
     width: 400px;

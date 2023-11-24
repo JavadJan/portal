@@ -34,26 +34,27 @@ const Home = () => {
                     </div>
                     :
                     <>
-                        <section className={`px-28 max-lg:px-[3%] w-[100%] bg-[#160F30] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
+                        {/* bg-[#160F30] */}
+                        <section className={`px-28 max-lg:px-[3%] w-[100%] bg-[#001524] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className="snap-center bg-[#160F30] relative top-0 text-white-400">
+                        <section id="home" className=" bg-[#001524] relative top-0 text-white-400 overflow-hidden">
                             <Profile />
                         </section>
-                        <section id="skills" className='snap-center section padding bg-yellow-light h-[55vh] max-sm:h-[45vh]'>
+                        <section id="skills" className=' section padding bg-[#F3FDE8] h-[55vh] max-sm:h-[45vh] overflow-hidden'>
                             <Skills />
                         </section>
-                        <section id="project" className='snap-center section bg-pale-blue padding'>
+                        <section id="project" className=' section bg-pale-blue padding'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="snap-center section padding">
+                        <section id="contact-me" className="snap-center max-sm:px-0 px-[3%] bg-[#354259] h-[content] py-28">
                             <ContactMe />
                         </section>
-                        <section id="about-me" className="snap-center section padding">
+                        <section id="about-me" className=" section padding">
                             <AboutMe />
                         </section>
 
-                        <section id="footer" className='snap-center section padding bg-black padding-t padding-x pb-8'>
+                        <section id="footer" className=' section padding bg-black padding-t padding-x pb-8'>
                             <Footer />
                         </section>
                     </>

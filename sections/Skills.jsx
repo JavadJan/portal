@@ -18,7 +18,8 @@ const Skills = () => {
   };
 
   return (
-    <MotionConfig transition={transition}>
+    <MotionConfig
+      transition={transition}>
       <motion.button
         className="skills"
         ref={ref}
