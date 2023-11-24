@@ -32,10 +32,10 @@ const ContactMe = () => {
       initial={{ opacity: 0, scale: 0.2, y: 2 }}
       whileInView={{ scale: 1, opacity: 1, type: "ease", y: 0 }}
       transition={{ duration: 1.5 }}
-      className='max-container bg-[#001524] rounded-3xl px-[5%] flex justify-between max-sm:flex-col gap-[1%] py-10 max-lg:h-auto h-[65vh] '>
+      className='max-container bg-[#001524] rounded-3xl px-[5%] flex justify-between max-sm:flex-col gap-[3%] py-10 max-lg:h-auto h-[66vh] '>
       {(msgEn && msgDe) && <>
 
-        <div className='max-lg:w-full w-[40%] bg-[#235952] max-lg:h-auto h-[80vh]  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col gap-10 max-lg:gap-6'>
+        <div className='max-lg:w-full w-[40%] bg-[#235952] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col gap-[2%] max-lg:gap-6'>
 
           <div className='flex justify-between'>
             <div className='hover:bg-[#2352344d] cursor-pointer  rounded-lg px-10 py-4'>
@@ -45,6 +45,7 @@ const ContactMe = () => {
               Calendar
             </div>
           </div>
+
           <h1 className='text-center text-3xl whitespace-nowrap max-lg:text-xl  font-montserrat text-white-400 w-full'>{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.title : msgDe.filter((ms) => ms.id === 'contact')[0].contact.title}</h1>
 
           <div className='flex flex-col gap-6 h-[85%] py-1'>
@@ -87,7 +88,7 @@ const ContactMe = () => {
           </div>
         </div>
 
-        <div className='max-lg:w-full w-[60%] flex flex-col justify-center items-start gap-3 font-palanquin'>
+        <div className='max-lg:w-full w-[60%] flex flex-col justify-center items-start gap-2 font-palanquin'>
 
 
           <form className='w-full font-palanquin flex flex-col items-start gap-4'>
