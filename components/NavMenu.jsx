@@ -6,6 +6,19 @@ import { UserContext } from '@context/Provider';
 
 const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
 
+  const [active, setActive] = useState(false)
+
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false)
+
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', isActive)
+    return () => {
+      window.removeEventListener('scroll', isActive)
+    };
+  }, []);
+
   const variants = {
     open: {
       clipPath: "circle(2530px at 10px 10px)",
@@ -13,7 +26,8 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
         type: "spring",
         stiffness: 2000,
         damping: 2000,
-        duration: 1
+        duration: 1,
+        opacity: 1
       }
     },
     closed: {
@@ -29,33 +43,26 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
     }
   }
 
-  // const variantParent = {
-  //   open: { transition: { staggerChildren: 0.1 } },
-  //   closed: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
-  // }
-  // const variantItems = {
-  //   open: { y: 0, opacity: 1 },
-  //   closed: { y: 50, opacity: 0 }
-  // }
+
 
   return (
     <motion.div
-      className='w-1/3 max-md:w-full py-16 justify-center absolute px-10 z-20 shadow-2xl bg-opacity-40 top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-[#1A120B]'
+      className={`w-1/3  max-md:w-full py-16 justify-center absolute px-10 z-30 shadow-2xl top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-black max-md:opacity-100 ${active ? 'max-lg:bg-white text-inherit' : ''}`}
       // initial={{ opacity: 0.5, scale: 0.7, clipPath: "circle(530px at 10px 10px)" }}
       variants={variants}
       animate={dropDown ? "open" : "closed"}
     >
 
       {<motion.ul
-        className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4 flex  max-sm:justify-start flex-col right-1`}
+        className={`text-[16px] font-montserrat relative max-md:text-white w-full h-full space-y-4  max-sm:justify-start flex-col right-1`}
       >
         {(!lang && menuEn && menuDe) ?
           menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item, i) => {
             return (<motion.li
               key={item.lable}
-              className='hover:bg-[#0478e4] max-lg:w-full max-sm:w-[45%] px-5 py-2 rounded-lg'
+              className='hover:bg-[#0478e4] hover:text-white max-md:touch-auto:bg-[#0478e4] max-lg:w-full max-sm:w-[45%] px-5 py-2 rounded-lg'
               initial={{ scale: 1, }}
-              whileHover={{ x: -10, scale: 1.1 }}
+              whileHover={{ x: -5, scale: 1.1 }}
               transition={{ duration: 0.6 }}
             >
               <a
@@ -68,7 +75,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
           menuDe.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
             return (<motion.li
               key={item.lable}
-              className='hover:bg-[#0478e4] whitespace-nowrap max-lg:w-full max-sm:w-[55%] px-5 py-2 rounded-lg'
+              className='hover:bg-[#0478e4] hover:text-white whitespace-nowrap max-lg:w-full max-sm:w-[55%] px-5 py-2 rounded-lg'
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
@@ -76,7 +83,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
               <a href={item.href} className='block max-lg:w-full max-lg:h-full'>{item.lable}</a>
             </motion.li>)
           })}
-        <div className="cursor-pointer space-y-2" onClick={handleLang}>
+        <div className="cursor-pointer space-y-2 z-30" onClick={handleLang}>
 
           {!lang ? <motion.span
             className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] max-sm:w-[45%] px-5 py-2 rounded-lg"

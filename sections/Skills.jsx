@@ -31,6 +31,14 @@ const Skills = () => {
           hover: { scale: 1.5 },
           press: { scale: 1.4 }
         }}
+        onTouchEnd={() => {
+          resetMousePosition();
+          setIsHover(false);
+        }}
+        onTouchMove={() => {
+          resetMousePosition();
+          setIsHover(true);
+        }}
         onHoverStart={() => {
           resetMousePosition();
           setIsHover(true);

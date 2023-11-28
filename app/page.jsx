@@ -10,8 +10,8 @@ import Skills from "@sections/Skills"
 import { useContext, useEffect, useState } from "react"
 
 const Home = () => {
-    const [active, setActive] = useState(false)
     const { de, en } = useContext(UserContext)
+    const [active, setActive] = useState(false)
 
     const isActive = () => {
         window.scrollY > 0 ? setActive(true) : setActive(false)
@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
 
-        <main className="relative">
+        <main className="relative ">
             {
                 !de && !en ?
                     <div className="flex justify-center items-center h-[100vh">
@@ -35,10 +35,10 @@ const Home = () => {
                     :
                     <>
                         {/* bg-[#160F30] */}
-                        <section className={`px-28 max-lg:px-[3%] w-[100%] bg-[#001524] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white-400' : 'text-white-400'}`}>
+                        <section className={`px-28 max-lg:px-[3%] w-[100%] bg-[#001524] z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white text-black' : 'text-white-400'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className=" bg-[#001524] relative top-0 text-white-400 overflow-hidden">
+                        <section id="home" className="bg-[#001524] relative top-0 text-white-400 overflow-hidden">
                             <Profile />
                         </section>
                         <section id="skills" className=' section padding bg-[#F3FDE8] h-[55vh] max-sm:h-[45vh] overflow-hidden'>
@@ -47,7 +47,7 @@ const Home = () => {
                         <section id="project" className=' section bg-pale-blue padding'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="snap-center max-sm:px-0 px-[3%] bg-[#354259] h-[content] py-28">
+                        <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-[content] py-28">
                             <ContactMe />
                         </section>
                         <section id="about-me" className=" section padding">

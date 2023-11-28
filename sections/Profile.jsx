@@ -7,7 +7,7 @@ import { UserContext } from "@context/Provider";
 
 
 const Profile = () => {
-    const { de, en, lang } = useContext(UserContext);
+    const { de, en, lang, dropDown } = useContext(UserContext);
     const [userEn, setUserEn] = useState(null)
     const [userDe, setUserDe] = useState(null)
 
@@ -18,10 +18,11 @@ const Profile = () => {
 
     const variants = {
         md: {
-            x: "-250%",
+            x: "-150%",
             transition: {
                 repeat: Infinity,
-                duration: 10,
+                duration: 20,
+                repeatType: 'mirror',
                 ease: "linear",
             }
         },
@@ -57,9 +58,9 @@ const Profile = () => {
         <section className='max-container flex justify-between items-center gap-10 max-md:flex-col max-md:gap-0 padding-profile overflow-hidden'>
             {(userEn && userDe) &&
                 < div
-                    className='flex-1  flex flex-col gap-5 mt-[90px] z-10' >
+                    className='flex-1 flex flex-col gap-5 mt-[90px] z-10' >
                     <h1 className='text-coral-red text-2xl '>{!lang ? userEn.filter((data) => data.id === "user")[0].user.title : userDe.filter((data) => data.id === "user")[0].user.title}</h1>
-                    <p className='font-montserrat ' >{!lang ? userEn.filter((data) => data.id === "user")[0].user.desc : userDe.filter((data) => data.id === "user")[0].user.desc}</p>
+                    <p className={`font-montserrat ${dropDown && 'max-md:text-gray-500'} `} >{!lang ? userEn.filter((data) => data.id === "user")[0].user.desc : userDe.filter((data) => data.id === "user")[0].user.desc}</p>
                     <div className='flex justify-start gap-6 pb-10'>
                         <Button label='Contact Me' />
                         <motion.span
@@ -79,7 +80,7 @@ const Profile = () => {
                 </div>
             }
             <motion.p
-                className='absolute ml-4 left-8 text-[150px] bottom-[250px] max-md:bottom-[40%] whitespace-nowrap opacity-5 max-md:text-[70px]'
+                className='absolute ml-4 left-8 text-[150px] bottom-[250px] max-md:bottom-[30%] whitespace-nowrap opacity-5 max-md:text-[70px]'
                 animate={window.innerWidth > 760 ? 'lg' : 'md'}
                 variants={variants}
             >Innovative Full Stack Developer, fusing ML and software for transformative solutions</motion.p>

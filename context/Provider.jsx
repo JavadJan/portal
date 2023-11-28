@@ -32,6 +32,8 @@ const UserProvider = ({ children }) => {
     const [de, setDe] = useState(null)
     // Fetch data and dispatch action outside of the reducer
     const [lang, setLang] = useState(true)
+    const [dropDown, setDropDown] = useState(false)
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,7 +57,7 @@ const UserProvider = ({ children }) => {
     }, []); // Empty dependency array ensures the effect runs once
 
     return (
-        <UserContext.Provider value={{ de: de, en: en, setLang, lang }}>
+        <UserContext.Provider value={{ de: de, en: en, setLang, lang , dropDown , setDropDown }}>
             {children}
         </UserContext.Provider>
     );

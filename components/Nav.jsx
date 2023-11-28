@@ -9,12 +9,11 @@ import { motion } from "framer-motion"
 import { UserContext } from "@context/Provider";
 
 const Nav = () => {
-    const { de, en, lang, setLang } = useContext(UserContext)
+    const { de, en, lang, setLang, dropDown, setDropDown } = useContext(UserContext)
 
     const [menuEn, setMenuEn] = useState(null)
     const [menuDe, setMenuDe] = useState(null)
 
-    const [dropDown, setDropDown] = useState(false)
     const handleLang = () => {
         setLang(!lang)
     }

@@ -115,7 +115,9 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
 
 export function Word({ text, variants, pos, color, fontSize }) {
     return (
-        <motion.group variants={variants}>
+        <motion.group variants={variants}
+
+        >
             <Text
                 position={pos}
                 fontSize={fontSize}
