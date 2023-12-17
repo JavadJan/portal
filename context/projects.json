@@ -1,0 +1,58 @@
+{
+    "projects": {
+        "fiverr": {
+            "title": "Fiverr",
+            "result": "Frontend Responsive",
+            "desc": "Seamlessly adapts to various screen sizes, providing an optimal viewing experience for users on desktop and mobile devices.",
+            "demo": "https://fiverr-clonee.netlify.app/",
+            "github": "https://github.com/JavadJan/fiver/tree/main/client",
+            "tech":["React", "MongoDB", "HTML", "CSS", "NodeJS", "ExpressJS"],
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/fiverr.JPG?alt=media&token=2612a388-87aa-4b94-b90b-29a415a092f0"
+        },
+        "booking": {
+            "title": "Booking Clone",
+            "result": "Fullstack",
+            "desc": "React Booking / Reservation System. MERN stack hotel reservation app project. React Node.js MongoDB full-stack app using Context API, JWT, custom hooks, and React calendar.",
+            "demo": "https://bookclinet.netlify.app/",
+            "github": "https://github.com/JavadJan/BookingTicket",
+            "tech":["React", "MongoDB", "HTML", "CSS", "NodeJS", "ExpressJS"],
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/booking.JPG?alt=media&token=eba98fed-9e27-44c5-9a24-bbb0cb764a00"
+        },
+        "hoody": {
+            "title": "Fiverr",
+            "result": "Team work skill, Manage Group",
+            "desc": "Secured 2nd place in a Hackathon with a dynamic project crafted using ReactJS, HTML, CSS, and Firebase. Seamless integration, innovation, and efficiency define our winning solution.",
+            "demo": "https://hoody-demo.netlify.app/",
+            "github": "https://github.com/JavadJan/Hoody",
+            "tech":["React", "Firebase", "HTML", "CSS"],
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/hoodys.JPG?alt=media&token=ff721e6d-38d6-435a-ab47-184cf721c2ff"
+        },
+        "instagram": {
+            "title": "Instagram Clone",
+            "result": "Learn Firebase",
+            "desc": "This React project has multiple pages: login, sign up, dashboard (to view/like/comment on photos), and user profiles.Firebase auth is used to store the user in the Firebase auth database.",
+            "demo": "https://instagram-clone-javadjan.vercel.app/",
+            "github": "https://github.com/JavadJan/instagram-clone",
+            "tech":["React", "Firebase", "Tailwind", "CSS"],
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/instagram.JPG?alt=media&token=f94ab8fb-d921-48bc-93b5-dd3eb44b6e71"
+
+        },
+        "quiz": {
+            "title": "Quiz App",
+            "result": "Improve Your Frontend Skills",
+            "desc": "Crafted a responsive user interface (UI) using ReactJS and SASS to ensure optimal user experience across various media platforms.",
+            "demo": "https://quiz-jov.netlify.app/",
+            "github": "https://github.com/JavadJan/App-Quiz",
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/quizs.JPG?alt=media&token=beebc0ef-e891-4c11-ab3e-65286d24590d"
+        },
+        "nike": {
+            "title": "Frontend Nike Clone",
+            "result": "Learn NextJs, Tailwind",
+            "desc": "Responsive Clone website with Tailwind CSS, providing an optimal viewing experience for users on desktop and mobile devices.",
+            "demo": "https://niikie.netlify.app/",
+            "github": "https://github.com/JavadJan/Nike-tailwind-nextjs",
+            "tech":["NextJS", "Tailwind"],
+            "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/nike.JPG?alt=media&token=ca0dd317-29d1-4e1c-a30c-2c0c8d200ab1"
+        }
+    }
+}

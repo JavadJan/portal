@@ -19,8 +19,12 @@ import github from './github.svg'
 import linkedin from './linkedin.svg'
 import location from './location.svg'
 import video from './video.svg'
+import logo from './logo.svg'
+import logo2 from './logo.png'
 
 export {
+    logo2,
+    logo,
     video,
     location,
     linkedin,

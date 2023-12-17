@@ -1,16 +1,17 @@
 import Button from '@/components/Button'
-import { javad } from '@public/assets/images'
+// import { javad } from '@public/assets/images'
 import Image from 'next/image'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { calcLength, motion } from "framer-motion";
 import { UserContext } from "@context/Provider";
+import { getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '@utils/firebase';
 
 
 const Profile = () => {
     const { de, en, lang, dropDown } = useContext(UserContext);
     const [userEn, setUserEn] = useState(null)
     const [userDe, setUserDe] = useState(null)
-
     const screenWidth = window.innerWidth;
 
     const percentageX = 0.5; // 50%
@@ -41,10 +42,9 @@ const Profile = () => {
             try {
                 const langEn = await en
                 const langDe = await de
-                // console.log("why state does not have value:", langData.en.user.title)
                 setUserEn(langEn)
                 setUserDe(langDe)
-
+               
             } catch (error) {
                 console.log(error)
             }
@@ -94,7 +94,7 @@ const Profile = () => {
                     whileInView={{ opacity: 1, scale: 0.5 }}
                     transition={{ duration: 3 }}
                 ></motion.div>
-                <Image src={javad} width={500} height={500} alt='' className='object-cover z-20' />
+                <Image id='myimg' src='https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/javad.png?alt=media&token=6322cad0-f739-42ef-be37-23434fabaeb1' width={500} height={500} alt='' className='object-cover z-20' />
             </div>
         </section >
     )

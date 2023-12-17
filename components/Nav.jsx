@@ -1,6 +1,6 @@
 "use client"
 // import { navLinks } from "@/constant"
-import { close, code, hamburger, instagram, menu, times } from "@/public/assets/icons"
+import { close, code, hamburger, instagram, logo2, menu, times } from "@/public/assets/icons"
 import Image from "next/image"
 import { useContext, useEffect, useState } from "react"
 import { FlagIcon, } from "react-flag-kit"
@@ -13,6 +13,7 @@ const Nav = () => {
 
     const [menuEn, setMenuEn] = useState(null)
     const [menuDe, setMenuDe] = useState(null)
+
 
     const handleLang = () => {
         setLang(!lang)
@@ -35,6 +36,7 @@ const Nav = () => {
 
                 setMenuDe(resDe)
                 setMenuEn(resEn)
+
             } catch (error) {
                 console.log(error)
             }
@@ -60,13 +62,13 @@ const Nav = () => {
                 {!lang ?
                     menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
                         return (<li key={item.lable}>
-                            <a href={item.href} className="hover:text-[#C07F00]">{item.lable}</a>
+                            <a href={item.href} className="hover:text-[#0003c0]">{item.lable}</a>
                         </li>)
                     })
                     :
                     menuDe.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
                         return (<li key={item.lable}>
-                            <a href={item.href} className="hover:text-[#F2BE22] w-full">{item.lable}</a>
+                            <a href={item.href} className="hover:text-[#0003c0] w-full">{item.lable}</a>
                         </li>)
                     })}
                 <div className="cursor-pointer space-y-2" onClick={handleLang}>

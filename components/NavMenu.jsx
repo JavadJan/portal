@@ -47,7 +47,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
 
   return (
     <motion.div
-      className={`w-1/3  max-md:w-full py-16 justify-center absolute px-10 z-30 shadow-2xl top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-black max-md:opacity-100 ${active ? 'max-lg:bg-white text-inherit' : ''}`}
+      className={`w-1/3  max-md:w-full py-16 justify-center absolute px-10 z-30 shadow-2xl top-0 max-lg:right-0  max-md:left-0 items-start max-lg:flex hidden max-md:full_menu max-md:bg-black max-md:opacity-100 ${active ? 'max-lg:bg-black text-white' : ''}`}
       // initial={{ opacity: 0.5, scale: 0.7, clipPath: "circle(530px at 10px 10px)" }}
       variants={variants}
       animate={dropDown ? "open" : "closed"}
@@ -83,7 +83,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
               <a href={item.href} className='block max-lg:w-full max-lg:h-full'>{item.lable}</a>
             </motion.li>)
           })}
-        <div className="cursor-pointer space-y-2 z-30" onClick={handleLang}>
+        <div className="cursor-pointer space-y-2 z-50" onClick={handleLang}>
 
           {!lang ? <motion.span
             className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] max-sm:w-[45%] px-5 py-2 rounded-lg"
@@ -93,7 +93,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
           > <FlagIcon code="DE" height={15} width={30} />DE
           </motion.span> :
             <motion.span
-              className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] max-sm:w-[45%] px-5 py-2 rounded-lg"
+              className="flex justify-start gap-3 h-content text-[14px] font-montserrat hover:bg-[#0478e4] max-sm:w-[50%] px-5 py-2 rounded-lg"
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}
