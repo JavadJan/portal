@@ -41,7 +41,7 @@ const Home = () => {
                         <section id="home" className="snap-start bg-[#001524] relative top-0 text-white-400 overflow-hidden">
                             <Profile />
                         </section>
-                        <section id="skills" className='snap-start section padding bg-[#F3FDE8] h-[55vh] max-sm:h-[45vh] overflow-hidden'>
+                        <section id="skills" className='snap-start section padding bg-[#F3FDE8] h-[65vh] max-sm:h-[45vh] overflow-hidden'>
                             <Skills />
                         </section>
                         <section id="project" className='snap-start h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6'>
