@@ -35,7 +35,7 @@ const Home = () => {
                     :
                     <>
                         {/* bg-[#160F30] */}
-                        <section className={`px-28 max-lg:px-[3%] w-[100%]  z-50 sticky top-0 ${active ? 'scroll_active lg:bg-white text-black ' : 'text-white bg-[#001524]'}`}>
+                        <section className={`px-28 max-lg:px-[3%] w-[100%]  z-50 sticky top-0 bg-[#001524] ${active ? 'scroll_active lg:bg-white text-black ' : 'text-white'}`}>
                             <Nav />
                         </section>
                         <section id="home" className="bg-[#001524] relative top-0 text-white-400 overflow-hidden">
@@ -44,7 +44,7 @@ const Home = () => {
                         <section id="skills" className=' section padding bg-[#F3FDE8] h-[55vh] max-sm:h-[45vh] overflow-hidden'>
                             <Skills />
                         </section>
-                        <section id="project" className='h-auto bg-[#F6F6F6] padding'>
+                        <section id="project" className='h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6'>
                             <Projects />
                         </section>
                         <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-[content] py-28">

@@ -78,7 +78,7 @@ const Nav = () => {
                 </div>
             </motion.ul>}
             {dropDown && <NavMenu menuDe={menuDe} menuEn={menuEn} lang={lang} handleLang={handleLang} dropDown={dropDown} />}
-            <div className={`max-lg:block hidden cursor-pointer z-30 ${dropDown && "hover:bg-[#0478e4] p-2 rounded-lg"}`} onClick={() => setDropDown(!dropDown)}>
+            <div className={`cursor-pointer z-30 bg-[#0478e4] justify-center items-center p-3 rounded-full max-lg:flex hidden`} onClick={() => setDropDown(!dropDown)}>
                 <svg width="23" height="23" viewBox="0 0 23 23" className="text-white">
                     <motion.path
                         strokeWidth="3"
