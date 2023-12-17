@@ -30,7 +30,7 @@ const Projects = () => {
     <section className='max-w-[1444px] mx-auto my-auto'>
       <h1>My Personal Project</h1>
       <div className='project'>
-        {lang ?
+        {!lang ?
           ((projectsEn && projectsDe) && projectsEn.filter(prj => prj.id === 'projects')[0].projects.map((project) => 
            { return <Project project={project} /> }))
           :
