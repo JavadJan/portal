@@ -44,7 +44,7 @@ const Home = () => {
                         <section id="skills" className=' section padding bg-[#F3FDE8] h-[55vh] max-sm:h-[45vh] overflow-hidden'>
                             <Skills />
                         </section>
-                        <section id="project" className='h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6'>
+                        <section id="project" className='snap-start h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6'>
                             <Projects />
                         </section>
                         <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-[content] py-28">
