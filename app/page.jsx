@@ -48,12 +48,14 @@ const Home = () => {
                         <section id="contact-me" className="snap-start max-sm:px-0 px-[3%] bg-planet h-[content] py-28">
                             <ContactMe />
                         </section>
-                        
+
                         <section id="about-me" className="snap-start bg-planet">
                             <div className="w-full h-full bg-[#235952a4] section padding text-white relative">
                                 <AboutMe />
 
-                                <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro.png?alt=media&token=87a95bfb-41c2-46e0-b376-bc13dce16d6e" alt="" className="absolute max-md:bottom-[-58px] bottom-[-75px] max-md:-right-16 right-0 max-md:w-[350px] w-[450px]" />
+                                <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro.png?alt=media&token=120ee86e-2168-485f-b6f2-a4b996ef7f93" alt=""
+                                    className="absolute max-md:bottom-[-10px] bottom-[-15px] max-sm:right-0 right-10 max-md:w-[170px] w-[300px]"
+                                />
                             </div>
                         </section>
                         <section id="skills" className='snap-center section padding bg-[#F3FDE8] h-[65vh] max-sm:h-[45vh] overflow-hidden'>
