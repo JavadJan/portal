@@ -22,6 +22,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
   const variants = {
     open: {
       clipPath: "circle(2530px at 10px 10px)",
+      
       transition: {
         type: "spring",
         stiffness: 2000,
@@ -31,7 +32,9 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
       }
     },
     closed: {
-      clipPath: "circle(0px at 10px 10px)",
+      // clipPath: "circle(0px at 10px 10px)",
+      // clipPath: "circle(2530px at 10px calc(100% - 10px))",
+      // clipPath: "circle(0px at 100% 0)",
       transition: {
         delay: 0.7,
         opacity: 0,

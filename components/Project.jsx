@@ -7,14 +7,14 @@ export const Project = ({ project }) => {
         hover: {
             y: "0%",
             transition: {
-                duration: 1,
+                duration: 0.7,
                 ease: "linear",
             }
         },
         leave: {
             y: "100%",
             transition: {
-                duration: 1,
+                duration: 0.7,
                 ease: "linear",
             }
         }
@@ -31,15 +31,15 @@ export const Project = ({ project }) => {
             <img src={project.img} alt="" className='object-cover h-[47%] brightness-[0.65] hover:backdrop-blur-xl hover:bg-white/30' />
             <div className='px-2 py-4 flex flex-col justify-between h-[100%] '>
                 <h1 className='text-xl'>{project.title}</h1>
-                <p className='text-[16px] text-[#555] font-montserrat'>{project.desc}</p>
-                <p className='text-[#777] text-[16px]'>{project.result}</p>
+                <p className='text-[16px] text-[#555] font-palanquin'>{project.desc}</p>
+                <p className='text-[16px]'>{project.result}</p>
 
-                <div className='flex gap-1 items-center'
+                <div className='flex gap-1 items-center text-[#0478e4] font-bold'
 
                 >
                     <span className='font-bold'>Tools: </span>
                     {project.tech.map((t) => {
-                        return <span className='text-[14px]'>{t}</span>
+                        return <span className='flex items-center'>{t}</span>
                     })}
                 </div>
             </div>

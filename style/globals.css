@@ -41,6 +41,11 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
     @apply h-[80vh]
   }
 
+  .project-shadow{
+    box-shadow: -13px 18px 39px 0px rgba(0,0,0,0.34);
+-webkit-box-shadow: -13px 18px 39px 0px rgba(0,0,0,0.34);
+-moz-box-shadow: -13px 18px 39px 0px rgba(0,0,0,0.34);
+  }
   /* .contact-me{
     display: grid;
     grid-templete-columns:repeat(auto-fit, minmax(300px , 1fr));

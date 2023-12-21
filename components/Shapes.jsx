@@ -24,7 +24,7 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
     const htmlPosition = [2.1, 2, 1]
     const cssPosition = [-3.8, 2.1, 0]
     const jsPosition = [-2.5, 0, 0]
-    const nodePosition = [2, 0, -1]
+    const nodePosition = [2.4, 0.3, -1]
     const nextPosition = [-2.3, -1.5, 1]
     const mongoPosition = [0.5, 3, -1]
     const pythonPosition = [3, -1, 1]

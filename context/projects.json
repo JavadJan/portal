@@ -54,5 +54,18 @@
             "tech":["NextJS", "Tailwind"],
             "img":"https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/nike.JPG?alt=media&token=ca0dd317-29d1-4e1c-a30c-2c0c8d200ab1"
         }
+    },
+    
+    "about-me":{
+        "introduction":"",
+        "expertise":[],
+        "contact":"",
+        "education":"",
+        "passion":"",
+        "certificate":"",
+        "":""
     }
 }
+
+
+   

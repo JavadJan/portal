@@ -79,7 +79,7 @@ const Skills = () => {
           variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
           className="label"
         >
-          Skills
+          Expertise
         </motion.div>
       </motion.button>
     </MotionConfig>

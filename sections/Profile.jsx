@@ -58,7 +58,7 @@ const Profile = () => {
         <section className='max-container flex justify-between items-center gap-10 max-md:flex-col max-md:gap-0 padding-profile overflow-hidden'>
             {(userEn && userDe) &&
                 < div
-                    className='flex-1 flex flex-col gap-5 mt-[90px] z-10' >
+                    className='flex-1 flex flex-col gap-5 mt-[90px] z-10 max-lg:mb-10' >
                     <h1 className='text-coral-red text-2xl '>{!lang ? userEn.filter((data) => data.id === "user")[0].user.title : userDe.filter((data) => data.id === "user")[0].user.title}</h1>
                     <p className={`font-montserrat ${dropDown && 'max-md:text-gray-500'} `} >{!lang ? userEn.filter((data) => data.id === "user")[0].user.desc : userDe.filter((data) => data.id === "user")[0].user.desc}</p>
                     <div className='flex justify-start gap-6 pb-10'>
