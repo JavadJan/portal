@@ -42,59 +42,70 @@ const AboutMe = () => {
       </motion.span>
 
       <div className='flex justify-between gap-10 flex-wrap max-md:flex-col'>
-        {/* 1 */}
-        {(aboutDe && aboutDe) && <p className='flex-1'>{!lang ? aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.introduction : aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.introduction}</p>}
+        <div className='flex-1 flex flex-col justify-between max-md:gap-5'>
+          {/* 1 introduction*/}
+          {(aboutDe && aboutDe) && <p className=''>{!lang ? aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.introduction : aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.introduction}</p>}
 
-        {/* 3 */}
+          {/* 1. certificate */}
+          {(aboutDe && aboutEn) && <div className='flex justify-end items-end columns-3 gap-10'>
+            {!lang ?
+              aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
+                return <div className='col-span-2 flex flex-col items-end'>
+                  <h1 className='mb-2'>{cr.title}</h1>
+                  <a href={cr.reference} target='_blank' className='inline-block'>
+                    <img src={cr.img} alt={cr.title} className=' cursor-pointer h-[100px] w-[130px]' />
+                  </a>
+                </div>
+              })
+              :
+              aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
+                return <div className='col-span-3 flex flex-col items-end'>
+                  <h1 className='mb-2'>{cr.title}</h1>
+                  <a href={cr.reference} target='_blank' className='inline-block'>
+                    <img src={cr.img} alt={cr.title} className=' cursor-pointer h-[100px] w-[130px]' />
+                  </a>
+                </div>
+              })}
+
+          </div>}
+
+        </div>
+
+        {/* 2 education*/}
         {(aboutDe && aboutEn) && <div className='flex-1 flex flex-col gap-5'>
           {!lang ?
             aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.education.map(ed => {
-              return <div>
+              return <div className='flex flex-col gap-1'>
                 <p className='text-[#777] font-bold '>{ed.start} - {ed.end}</p>
 
-                <h1 className='text-xl'>{ed.title}</h1>
-                <h2 className='flex justify-start items-center gap-3'><Image src={location} width={18} height={18} /> {ed.location}</h2>
-                <p>{ed.output}</p>
+                <h1 className='text-xl bg-[#333] w-fit px-2 italic'>{ed.title}</h1>
+                <h2 className='flex justify-start items-center gap-3 bg-[#333] w-fit px-2 italic'><Image src={location} width={18} height={18} /> {ed.location}</h2>
+                <p className='text-[#bbb]'>{ed.output}</p>
               </div>
             })
             :
             aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.education.map(ed => {
-              return <div>
+              return <div className='flex flex-col gap-1'>
                 <p>{ed.start} - {ed.end}</p>
 
-                <h1>{ed.title}</h1>
-                <h2>{ed.location}</h2>
+                <h1 className='text-xl bg-[#333] w-fit px-2 italic'>{ed.title}</h1>
+                <h2 className='flex justify-start items-center gap-3 bg-[#333] w-fit px-2 italic'><Image src={location} width={18} height={18} /> {ed.location}</h2>
                 <p>{ed.output}</p>
               </div>
             })}
         </div>}
       </div>
 
-      <div className='flex justify-between gap-10 max-md:flex-col'>
+      <div className='flex justify-around gap-10 max-md:flex-col max-md:mb-24'>
 
-        {(aboutDe && aboutDe) && <p className='flex-1'>Passionate: {!lang ? aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.passion : aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.passion}</p>}
+        {/* 2 passion */}
+        {(aboutDe && aboutDe) && <p className='flex-1'>Passionate:
+          <br />
+          {!lang ? aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.passion : aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.passion}</p>}
 
-        {(aboutDe && aboutEn) && <div className='flex-1'>
-          {!lang ?
-            aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
-              return <div>
-                <h1>{cr.title}</h1>
-                <a href={cr.reference} target='_blank' className='inline-block'>
-                  <img src={cr.img} alt={cr.title} width={100} height={100} className='object-cover cursor-pointer' />
-                </a>
-              </div>
-            })
-            :
-            aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
-              return <div>
-                <h1>{cr.title}</h1>
-                <a href={cr.reference} target='_blank' className='inline-block'>
-                  <img src={cr.img} alt={cr.title} height={100} width={100} className='object-cover cursor-pointer' />
-                </a>
-              </div>
-            })}
+        <div className='flex-1'></div>
 
-        </div>}
+
       </div>
     </section>
   )
