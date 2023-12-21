@@ -38,14 +38,14 @@ const Home = () => {
                         <section className={`snap-start px-28 max-lg:px-[3%] w-[100%]  z-50 sticky top-0 bg-[#001524] ${active ? 'scroll_active lg:bg-white text-black' : 'text-white'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className="snap-start bg-[#001524] relative top-0 text-white-400 overflow-hidden">
+                        <section id="home" className="snap- bg-[#001524] relative top-0 text-white-400 overflow-hidden">
                             <Profile />
                         </section>
 
-                        <section id="project" className='snap-start h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6 relative'>
+                        <section id="project" className='snap-both h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6 relative'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="snap-start max-sm:px-0 px-[3%] bg-planet h-[content] py-28">
+                        <section id="contact-me" className="snap-both max-sm:px-0 px-[3%] bg-planet h-[content] py-28">
                             <ContactMe />
                         </section>
 
