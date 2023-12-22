@@ -25,7 +25,8 @@ export const Project = ({ project }) => {
             animate={isHovered ? 'hover' : 'leave'}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
-
+            onTouchStart={()=>setIsHovered(true)}
+            onTouchEnd={()=>setIsHovered(false)}
         >
 
             <img src={project.img} alt="" className='object-cover h-[47%] brightness-[0.65] hover:backdrop-blur-xl hover:bg-white/30' />
