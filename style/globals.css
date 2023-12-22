@@ -144,7 +144,7 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
     
   }
   .padding-profile {
-    @apply pb-0 sm:px-16 px-8 sm:pt-24 pt-12 ;
+    @apply pb-0 sm:px-16 px-8 sm:pt-24 pt-2 ;
   }
 
   .padding-x {

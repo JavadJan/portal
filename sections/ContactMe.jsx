@@ -20,7 +20,7 @@ const ContactMe = () => {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const form = useRef()
+  const form1 = useRef()
 
   const success = () => toast.success('Message successfully received ✔')
   const err = () => toast.error('An error has occurred! Try again')
@@ -32,14 +32,16 @@ const ContactMe = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    if (!isEmail(email)) {
-      emailjs.sendForm('service_pun76bb', 'template_xaebh8m', form.current, 'a8c8Yk5xsPBcuaC8v')
+    console.log(form1.current)
+    if (isEmail(email)) {
+      emailjs.sendForm('service_pun76bb', 'template_xaebh8m', form1.current, 'a8c8Yk5xsPBcuaC8v')
         .then((result) => {
-
+          console.log(result.text);
           success()
           init()
         }, (error) => {
-          err()
+          err(error.text)
+
         });
     } else {
       emailNotValid()
@@ -72,10 +74,8 @@ const ContactMe = () => {
       whileInView={{ scale: 1, opacity: 1, type: "ease", y: 0 }}
       transition={{ duration: 1.5 }}
       className='max-container bg-[#00152491] rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh]'>
-      
+
       {(msgEn && msgDe) && <>
-
-
         <div className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>
 
           <div className='flex justify-between '>
@@ -134,11 +134,11 @@ const ContactMe = () => {
 
           <form
             className='w-full font-palanquin flex flex-col items-start gap-4'
-            ref={form}
+            ref={form1}
             onSubmit={sendEmail}>
             <div className='flex flex-col gap-1 w-full'>
               <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName}</label>
-              <input name='email' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-2 outline-none border-none' />
+              <input name='fullName' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-2 outline-none border-none' />
             </div>
             <div className='flex flex-col gap-1 w-full'>
               <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email}</label>
@@ -148,7 +148,7 @@ const ContactMe = () => {
               <label className='text-white-400' htmlFor="message">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message}</label>
               <textarea name="message" id="" cols="25" rows="6" value={message} onChange={(e) => setMessage(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message} className='px-2 outline-none py-1'></textarea>
             </div>
-            <button type='submit' className='self-stretch border-1 border-white-400 w-36 h-14 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-2xl'>{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.send : msgDe.filter((ms) => ms.id === 'contact')[0].contact.send}</button>
+            <button type='submit' className='self-stretch border-1 border-white-400 w-36 h-14 z-20 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-2xl'>{!lang ? 'send' : 'senden'}</button>
           </form>
 
 

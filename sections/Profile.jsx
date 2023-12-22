@@ -55,7 +55,7 @@ const Profile = () => {
     }, [de, en])
 
     return (
-        <section className='max-container flex justify-between items-center gap-10 max-md:flex-col max-md:gap-0 padding-profile overflow-hidden'>
+        <section className='max-container flex justify-between  padding-profile items-center max-md:flex-col max-md:gap-0  overflow-hidden'>
             {(userEn && userDe) &&
                 < div
                     className='flex-1 flex flex-col gap-5 mt-[90px] z-10 max-lg:mb-10' >

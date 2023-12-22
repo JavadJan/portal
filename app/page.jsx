@@ -52,7 +52,7 @@ const Home = () => {
 
                         <section id="about-me" className="bg-planet relative">
 
-                            <div className="w-full h-full bg-[#235952a4] section padding text-white z-10">
+                            <div className="w-full h-full bg-[#235952a4] section padding text-white">
                                 <AboutMe />
                                 <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro.png?alt=media&token=120ee86e-2168-485f-b6f2-a4b996ef7f93" alt=""
                                     className="absolute max-md:bottom-[-10px] bottom-[-15px] max-sm:right-0 right-14 max-md:w-[170px] w-[270px]"
