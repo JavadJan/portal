@@ -7,6 +7,7 @@ import Footer from "@sections/Footer"
 import Profile from "@sections/Profile"
 import Projects from "@sections/Projects"
 import Skills from "@sections/Skills"
+import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react"
 
 const Home = () => {
@@ -49,10 +50,10 @@ const Home = () => {
                             <ContactMe />
                         </section>
 
-                        <section id="about-me" className="bg-planet">
-                            <div className="w-full h-full bg-[#235952a4] section padding text-white relative">
-                                <AboutMe />
+                        <section id="about-me" className="bg-planet relative">
 
+                            <div className="w-full h-full bg-[#235952a4] section padding text-white z-10">
+                                <AboutMe />
                                 <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro.png?alt=media&token=120ee86e-2168-485f-b6f2-a4b996ef7f93" alt=""
                                     className="absolute max-md:bottom-[-10px] bottom-[-15px] max-sm:right-0 right-14 max-md:w-[170px] w-[270px]"
                                 />

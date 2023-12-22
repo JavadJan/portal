@@ -5,6 +5,7 @@ import { UserContext } from '@context/Provider';
 import { FaPhone, FaReact } from 'react-icons/fa';
 import Image from 'next/image';
 import { firebase, tailwind, nextjs, mongodb, react } from "@public/assets/images"
+import { motion } from "framer-motion";
 
 
 const Projects = () => {
@@ -32,6 +33,8 @@ const Projects = () => {
 
   return (
     <section className='max-w-[1444px] mx-auto my-auto pt-16'>
+      
+
       <div className='absolute w-[100%] max-container max-lg:left-0 flex justify-center items-center max-md:gap-1 gap-4 max-md:-top-10 -top-16 z-30'>
         <div className='max-md:h-[70px] h-[120px] max-dm:w-[70px] w-[120px] project-shadow max-md:p-3 p-6 rounded-lg bg-[#0E2954] flex justify-center items-center'>
           <Image src={tailwind} />

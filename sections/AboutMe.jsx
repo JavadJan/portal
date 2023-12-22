@@ -34,11 +34,10 @@ const AboutMe = () => {
           repeat: Infinity,
           repeatType: "reverse",
           duration: 0.4,
-          // rotate:360
         }}
-        className=''
+
       >
-        <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro2.png?alt=media&token=9e3f06a2-0f8e-40bb-9901-3474d5748536" alt="" className="absolute object-cover top-[-230px] left-[-100px] max-md:left-[-50px]  w-[300px] " />
+        <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro2.png?alt=media&token=9e3f06a2-0f8e-40bb-9901-3474d5748536" alt="" className="absolute object-cover top-[-270px] left-3 w-[300px] -z-10" />
       </motion.span>
 
       <div className='flex justify-between gap-10 flex-wrap max-md:flex-col'>

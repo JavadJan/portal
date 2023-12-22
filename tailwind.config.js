@@ -48,6 +48,7 @@ module.exports = {
         'dream': "url('/assets/images/dream.jpeg')",
         'planet': "url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=600')",
         'ai': "url('/assets/images/ai.jpg')",
+        "tech":"url('https://www.shutterstock.com/image-vector/abstract-gradient-wave-particles-big-data-1930623710')"
       },
       screens: {
         "wide": "1440px"
