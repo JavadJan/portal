@@ -63,7 +63,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
           menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item, i) => {
             return (<motion.li
               key={item.lable}
-              className='hover:bg-[#0478e4] hover:text-white max-md:touch-auto:bg-[#0478e4] max-lg:w-full max-sm:w-[45%] px-5 py-2 rounded-lg'
+              className='hover:bg-[#0478e4] hover:text-white max-md:touch-auto:bg-[#0478e4] max-lg:w-full max-sm:w-fit px-5 py-2 rounded-lg'
               initial={{ scale: 1, }}
               whileHover={{ x: -5, scale: 1.1 }}
               transition={{ duration: 0.6 }}
@@ -78,7 +78,7 @@ const NavMenu = ({ lang, handleLang, menuDe, menuEn, dropDown }) => {
           menuDe.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
             return (<motion.li
               key={item.lable}
-              className='hover:bg-[#0478e4] hover:text-white whitespace-nowrap max-lg:w-full max-sm:w-[55%] px-5 py-2 rounded-lg'
+              className='hover:bg-[#0478e4] hover:text-white whitespace-nowrap max-lg:w-full max-sm:w-fit px-5 py-2 rounded-lg'
               initial={{ scale: 1 }}
               whileHover={{ x: -10, scale: 1.1 }}
               transition={{ duration: 0.6 }}

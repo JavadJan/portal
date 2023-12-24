@@ -112,7 +112,7 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
   }
 
   .scroll_active {
-    @apply w-full
+    @apply w-full ;
   }
 
   .input {
@@ -129,14 +129,103 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
     @apply duration-500 delay-300 ease-in-out;
     
   }
+  
+}
+@layer components{
+  .card-hover{
+    @apply inset-0 bg-gradient-to-r from-white to-[#edeff1] opacity-0 hover:opacity-100 rounded-md ;
+  }
 }
 .project{
   width:100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap:1rem; 
+  gap:2rem; 
   @apply p-2;
 }
+.card{
+  
+}
+.card:hover{
+  transition: all 0.7s ease-in;
+  transform: scale(1.02);
+  /* transform:scale(0.2,0.4); */
+  box-shodow:10px 10px  20px 5px #0478e4;
+  /* margin:2rem; */
+  /* animation: rotate 1s 1.4s linear; */
+}
+
+/* hover */
+.text-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out; /* Optional: add color transition */
+}
+
+
+/* btn hover */
+.btn::before{
+  contant:"";
+  top:0;
+  left:0;
+  width:100%;
+  height:100;
+  backgound:linear-gradient(120deg, transparent , #0478e4, transparent);
+  transform:translateX(-100%);
+  transform:0.6s;
+  position:absolute;
+}
+.btn:hover{
+  backgound:transparent;
+  box-shadow:0 0 20px 5px @apply bg-coral-red;
+}
+/* btn end hover */
+
+.text-hover::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, white, #0478e4); /* Gradient from white to #0478e4 */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in;
+}
+.text-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to left, white, #0478e4); /* Gradient from white to #0478e4 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in;
+}
+
+.text-hover::before {
+  top: 0;
+}
+
+.text-hover::after {
+  bottom: 0;
+}
+
+.text-hover:hover::before,
+.text-hover:hover::after {
+  transform: scaleY(0);
+}
+/* end hover */
+
+/* start backgound card */
+
+/* .card-hover:hover{
+  transform-origin: right;
+  transition: transform 0.6s ease-in;
+} */
+/* end backgound card */
 
 @layer utilities {
   .padding {

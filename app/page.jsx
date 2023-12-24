@@ -36,10 +36,11 @@ const Home = () => {
                     :
                     <>
                         {/* bg-[#160F30] */}
-                        <section className={`px-28 max-lg:px-[3%] w-[100%]  z-50 sticky top-0 bg-[#001524] ${active ? 'scroll_active lg:bg-white text-black' : 'text-white'}`}>
+                        {/* bg-[#001524] */}
+                        <section className={`px-28 max-lg:px-[3%] w-[100%]  z-50 sticky top-0 ${active ?  'scroll_active bg-white lg:bg-white text-black' : 'text-white bg-planet'}`}>
                             <Nav />
                         </section>
-                        <section id="home" className="bg-[#001524] relative top-0 text-white-400 overflow-hidden">
+                        <section id="home" className="bg-planet relative top-0 text-white-400 overflow-hidden">
                             <Profile />
                         </section>
 

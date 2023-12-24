@@ -51,7 +51,7 @@ const Nav = () => {
         <motion.nav
             initial={{ opacity: 0.8 }}
             transition={{ duration: 1 }}
-            className={`h-16 max-container flex justify-between items-center max-md:flex-row-reverse`} style={{opacity:0.8}}>
+            className={`h-16 max-container flex justify-between items-center max-md:flex-row-reverse`} style={{ opacity: 0.8 }}>
             <Image src={code} width={30} height={30} alt="logo" />
             {menuDe && menuEn && <motion.ul
                 className="gap-10 justify-center items-center font-montserrat max-lg:hidden flex"
@@ -62,19 +62,22 @@ const Nav = () => {
                 {!lang ?
                     menuEn.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
                         return (<li key={item.lable}>
-                            <a href={item.href} className="hover:text-[#0003c0]">{item.lable}</a>
+                            <motion.a
+                                href={item.href}
+                                className="text-hover"
+                            >{item.lable}</motion.a>
                         </li>)
                     })
                     :
                     menuDe.filter((mn) => mn.id === 'menu')[0].menu.map((item) => {
                         return (<li key={item.lable}>
-                            <a href={item.href} className="hover:text-[#0003c0] w-full">{item.lable}</a>
+                            <a href={item.href} className="text-hover">{item.lable}</a>
                         </li>)
                     })}
                 <div className="cursor-pointer space-y-2" onClick={handleLang}>
-                    {!lang ? <span className="flex justify-between h-content w-[70px] text-[14px] font-montserrat" onClick={handleLang}>DE <FlagIcon code="DE" height={15} width={30} />
+                    {!lang ? <span className="flex justify-between h-content w-[70px] text-[14px] font-montserrat text-hover" onClick={handleLang}>DE <FlagIcon code="DE" height={15} width={30} />
                     </span> :
-                        <span className="flex justify-between h-content w-[70px] text-[14px] font-montserrat">EN <FlagIcon code="US" height={15} width={30} /></span>}
+                        <span className="flex justify-between h-content w-[70px] text-[14px] font-montserrat text-hover">EN <FlagIcon code="US" height={15} width={30} /></span>}
                 </div>
             </motion.ul>}
             {dropDown && <NavMenu menuDe={menuDe} menuEn={menuEn} lang={lang} handleLang={handleLang} dropDown={dropDown} />}
