@@ -48,7 +48,9 @@ module.exports = {
         'dream': "url('/assets/images/dream.jpeg')",
         'planet': "url('https://images.pexels.com/photos/1694000/pexels-photo-1694000.jpeg?auto=compress&cs=tinysrgb&w=600')",
         'ai': "url('/assets/images/ai.jpg')",
-        "tech":"url('https://www.shutterstock.com/image-vector/abstract-gradient-wave-particles-big-data-1930623710')"
+        "tech":"url('https://www.shutterstock.com/image-vector/abstract-gradient-wave-particles-big-data-1930623710')",
+        "stars":"url('https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/stars.png?alt=media&token=4dd4133b-b458-456e-93e3-b510acdfa1ed')",
+        "turtle":"url('https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/Turtle.png?alt=media&token=1abedd86-9a40-4dd7-990e-f0f4310e4d36')",
       },
       screens: {
         "wide": "1440px"

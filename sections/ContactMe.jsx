@@ -73,7 +73,7 @@ const ContactMe = () => {
       initial={{ opacity: 0, scale: 0.2, y: 2 }}
       whileInView={{ scale: 1, opacity: 1, type: "ease", y: 0 }}
       transition={{ duration: 1.5 }}
-      className='max-container bg-[#00152491] rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh]'>
+      className='max-container bg-[#00152491] rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
 
       {(msgEn && msgDe) && <>
         <div className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>

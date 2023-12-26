@@ -2,7 +2,7 @@ import Button from '@/components/Button'
 // import { javad } from '@public/assets/images'
 import Image from 'next/image'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { calcLength, motion } from "framer-motion";
+import { calcLength, motion, useScroll, useTransform } from "framer-motion";
 import { UserContext } from "@context/Provider";
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '@utils/firebase';
@@ -44,7 +44,7 @@ const Profile = () => {
                 const langDe = await de
                 setUserEn(langEn)
                 setUserDe(langDe)
-               
+
             } catch (error) {
                 console.log(error)
             }
@@ -53,9 +53,15 @@ const Profile = () => {
 
 
     }, [de, en])
-
+    const ref = useRef()
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"]
+    })
+    const yBg = useTransform(scrollYProgress, [0, 1], ["50%", "1000%"])
     return (
-        <section className='max-container flex justify-between  padding-profile items-center max-md:flex-col max-md:gap-0  overflow-hidden'>
+        <section ref={ref} className='max-container flex justify-between padding-profile  max-md:flex-col max-md:gap-0  overflow-hidden'>
+            
             {(userEn && userDe) &&
                 < div
                     className='flex-1 flex flex-col gap-5 mt-[90px] z-10 max-lg:mb-10' >
@@ -84,16 +90,16 @@ const Profile = () => {
                 animate={window.innerWidth > 760 ? 'lg' : 'md'}
                 variants={variants}
             >Innovative Full Stack Developer, fusing ML and software for transformative solutions</motion.p>
-            <div className='flex-1 w-full h-[500px] flex justify-center bg-cover bg-center self-end'>
+            <div className='flex-1 w-full h-[550px] flex justify-center bg-cover bg-center self-end'>
                 <div className='glassy-circle'></div>
-                <motion.div
+                {/* <motion.div
                     className='absolute left-[20%] -top-[30%] w-[200px] h-[150px] border border-white-400 ring-white z-20 max-lg:w-[20%] max-lg:h-[30%] max-lg:hidden'
                     animate={{ x: calculatedX, rotate: -50, y: 450 }}
 
                     initial={{ opacity: 0.5, scale: 1 }}
                     whileInView={{ opacity: 1, scale: 0.5 }}
                     transition={{ duration: 3 }}
-                ></motion.div>
+                ></motion.div> */}
                 <Image id='myimg' src='https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/javad.png?alt=media&token=6322cad0-f739-42ef-be37-23434fabaeb1' width={500} height={500} alt='' className='object-cover z-20' />
             </div>
         </section >
