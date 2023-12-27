@@ -33,8 +33,8 @@ const Home = () => {
 
     const yBg = useTransform(scrollYProgress, [0, 1], ["-100%", "400%"])
     const xBg = useTransform(scrollYProgress, [0, 1], ["20%", "-250%"])
-    const startBg = useTransform(scrollYProgress, [0, 1], ["0%", "500%"])
-    const startContact = useTransform(scrollYProgress, [0, 1], ["-400%", "500%"])
+    const startBg = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
+    const startContact = useTransform(scrollYProgress, [0, 1], ["-30%", "100%"])
     const rocket = useTransform(scrollYProgress, [0, 1], ["0%", "-400%"])
     return (
 
@@ -52,18 +52,20 @@ const Home = () => {
                             <Nav />
                         </section>
                         <section ref={ref} id="home" className="bg-planet relative top-0 text-white-400 overflow-hidden">
+                            <motion.div className="bg-stars absolute top-1 h-[600px] w-full object-contain brightness-75" style={{ y: startBg }}></motion.div>
                             <motion.img style={{ y: yBg, x: xBg }}
                                 className="absolute bottom-20 right-[5%] w-[15%] h-[15%] object-contain"
                                 src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/Turtle.png?alt=media&token=1abedd86-9a40-4dd7-990e-f0f4310e4d36" alt="" />
-                            <motion.div className="bg-stars absolute h-full w-full" style={{ y: startBg }}></motion.div>
+
                             <Profile />
                         </section>
 
-                        <section id="project" className='h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6 relative'>
+                        <section id="project" className='h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-[content] py-28 relative">
-                            <motion.div className="bg-stars absolute w-[90%] h-full overflow-hidden" style={{ y: startContact }}></motion.div>
+                        <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-[content] py-28 relative overflow-hidden">
+                            <motion.div className="bg-stars absolute w-[90%] top-0 h-[600px] overflow-hidden brightness-75 object-contain" style={{ y: startContact }}></motion.div>
+                            
                             <ContactMe />
                             <motion.img
                                 animate={{ y: -10 }}
