@@ -7,7 +7,7 @@ import Footer from "@sections/Footer"
 import Profile from "@sections/Profile"
 import Projects from "@sections/Projects"
 import Skills from "@sections/Skills"
-import { useScroll, useTransform, motion  } from "framer-motion"
+import { useScroll, useTransform, motion } from "framer-motion"
 import { useContext, useEffect, useRef, useState } from "react"
 
 const Home = () => {
@@ -41,8 +41,11 @@ const Home = () => {
         <main className="relative">
             {
                 !de && !en ?
-                    <div className="flex justify-center items-center h-[100vh] text-lg text-center">
-                        Loading...
+                    <div class='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
+                        <span class='sr-only'>Loading...</span>
+                        <div class='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                        <div class='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                        <div class='h-8 w-8 bg-black rounded-full animate-bounce'></div>
                     </div>
                     :
                     <>
@@ -92,7 +95,7 @@ const Home = () => {
                             <Skills />
                         </section>
 
-                        <section id="footer" className='section padding bg-black padding-t padding-x pb-8'>
+                        <section id="footer" className='footer padding-footer bg-black padding-t padding-x'>
                             <Footer />
                         </section>
                     </>

@@ -38,6 +38,7 @@ const ContactMe = () => {
         .then((result) => {
           console.log(result.text);
           success()
+
           init()
         }, (error) => {
           err(error.text)
@@ -152,22 +153,22 @@ const ContactMe = () => {
           </form>
 
 
-
+          <ToastContainer
+            position="bottom-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <div className='flex gap-5'>
           </div>
         </div>
 
-        <ToastContainer
-          position="bottom-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+
       </>}
     </motion.section>
 

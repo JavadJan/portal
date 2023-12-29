@@ -40,6 +40,9 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
   .section{
     @apply h-[80vh]
   }
+  .footer{
+    @apply h-fit;
+  }
 
   .project-shadow{
     box-shadow: -13px 18px 39px 0px rgba(0,0,0,0.34);
@@ -230,6 +233,10 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
+    
+  }
+  .padding-footer {
+    @apply pb-10 sm:px-16 px-8 sm:pt-24 pt-12;
     
   }
   .padding-profile {
