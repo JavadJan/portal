@@ -114,17 +114,15 @@ const ContactMe = () => {
             </div>
 
           </div>
-
-
-          <div className='flex justify-center gap-5 items-center'>
-            <a href='https://linkedin.com/in/javad-khavari' target='_blank' className='cursor-pointer p-1  flex justify-center items-center'>
-              <Image src={linkedin} width={40} height={40} />
+          <div className='w-full flex justify-center items-center mb-4 gap-2 md:mb-1'>
+            <a href='https://linkedin.com/in/javad-khavari' target='_blank' className='cursor-pointer p-2  flex justify-center items-center w-[35px] h-[35px] ring-1 ring-white-400 rounded-full transition-all duration-100 ease-in hover:bg-white-400 '>
+              <Image src={linkedin} width={25} height={25} />
             </a>
-            <a href='https://twitter.com/Javad_Bamyan' target='_blank' className='cursor-pointer p-1 flex justify-center items-center'>
-              <Image src={twitter} width={40} height={40} />
+            <a href='https://twitter.com/Javad_Bamyan' target='_blank' className='cursor-pointer p-2 flex justify-center items-center w-[35px] h-[35px] ring-1 ring-white-400 rounded-full transition-all duration-100 ease-in hover:bg-white-400'>
+              <Image src={twitter} width={25} height={25} />
             </a>
-            <a href='https://github.com/JavadJan' target='_blank' className='cursor-pointer p-1 flex justify-center items-center mt-2'>
-              <Image src={github} width={40} height={40} />
+            <a href='https://github.com/JavadJan' target='_blank' className='cursor-pointer p-2 flex justify-center items-center w-[35px] h-[35px]  ring-1 ring-white-400 rounded-full transition-all duration-100 ease-in hover:bg-white-400'>
+              <Image src={github} width={25} height={25} />
             </a>
 
           </div>

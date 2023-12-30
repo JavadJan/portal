@@ -222,14 +222,21 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
 }
 /* end hover */
 
-/* start backgound card */
+.name {
+  background: linear-gradient(to right, rgba(0, 168, 253), #fff 35%, #e00a95);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Added to ensure cross-browser compatibility */
+  animation: gradient 3s linear infinite;
+  transition: color 0.3s ease; /* Add transition for text color */
+}
 
-/* .card-hover:hover{
-  transform-origin: right;
-  transition: transform 0.6s ease-in;
-} */
-/* end backgound card */
-
+@keyframes gradient {
+  0%{background-position:0% 75%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 70%;}
+}
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
