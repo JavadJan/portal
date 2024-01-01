@@ -125,10 +125,11 @@ export function Word({ text, variants, pos, color, fontSize }) {
                 fontWeight="bold"
                 variants={{
                     hover: {
-                        x: window.innerWidth > 480 ? 1.8 : 1.4,
-                        z: window.innerWidth > 480 ? 0.4 : 0.3,
-                        y: window.innerWidth > 480 ? 0.3 : 0.2,
-                        rotateZ: window.innerWidth > 480 ? -1.5 : -1.2
+                        x: window.innerWidth > 480 ? 0.6 : 1.8,
+                        z: window.innerWidth > 480 ? 0.2 : 0.6,
+                        y: window.innerWidth > 480 ? 0.3 : 1.6,
+                        rotateZ: window.innerWidth > 480 ? -1.5 : -0.5
+                        // rotateZ: window.innerWidth > 480 ? -1.5 : -1.2
                     }
                 }}
             >

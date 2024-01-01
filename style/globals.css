@@ -143,20 +143,29 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
   width:100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap:2rem; 
+  gap:3rem; 
   @apply p-2;
 }
 .card{
   
 }
 .card:hover{
-  transition: all 0.7s ease-in;
-  transform: scale(1.02);
-  /* transform:scale(0.2,0.4); */
-  box-shodow:10px 10px  20px 5px #0478e4;
+  transition: all 0.7s ease-in-out;
+  transform:scale(0.9) skew(5deg, 1deg) translate(5px, 8px);
+  box-shodow:20px 20px  20px 50px #000;
   /* margin:2rem; */
   /* animation: rotate 1s 1.4s linear; */
 }
+.card-desc:hover{
+  transition: all 0.7s ease-in;
+  transform:scale(1) translate(8px, -5px);
+  /* text-shadow: -5px 5px 6px rgba(0,0,0,0.6); */
+  /* text-shadow: -15px 4px 11px #000000; */
+  text-shadow: -14px 16px 11px #000000;
+  /* text-shadow: -29px 33px 29px rgba(0,0,0,0.6); */
+  line-height:1.8rem;
+}
+
 
 /* hover */
 .text-hover {

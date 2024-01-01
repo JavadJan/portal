@@ -15,7 +15,7 @@
   border-radius: 60px;
   outline: none;
   margin: 0;
-  padding: 7px 15px;
+  /* padding: 7px 15px; */
   font-family: "Poppins";
   font-size: 30px;
   font-weight: 600;
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   margin:80px auto;
-  @apply max-sm:px-0 py-2
+  @apply max-sm:px-0 py-2 
 }
 
 .shapes {
@@ -79,12 +79,12 @@
 }
 
 .label {
-  width: 150px;
   padding: 20px 0;
   transform: translateZ(0);
   font-weight: 700;
   z-index: 1;
-  @apply max-sm:py-2
+  
+  @apply max-sm:py-2 max-md:text-xl font-palanquin max-md:w-[100px] w-[150px]
 }
 
 .default {

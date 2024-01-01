@@ -33,7 +33,7 @@ const Home = () => {
 
     const yBg = useTransform(scrollYProgress, [0, 1], ["-100%", "400%"])
     const xBg = useTransform(scrollYProgress, [0, 1], ["20%", "-250%"])
-    const startBg = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
+    const startBg = useTransform(scrollYProgress, [0, 1], ["0%", "300%"])
     const startContact = useTransform(scrollYProgress, [0, 1], ["-30%", "100%"])
     const rocket = useTransform(scrollYProgress, [0, 1], ["0%", "-400%"])
     return (
@@ -63,7 +63,8 @@ const Home = () => {
                             <Profile />
                         </section>
 
-                        <section id="project" className='h-auto bg-[#F6F6F6] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
+                        {/* bg-[#F6F6F6] */}
+                        <section id="project" className='h-auto bg-[#001524] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
                             <Projects />
                         </section>
                         <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-fit py-28 relative overflow-hidden">
