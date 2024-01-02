@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isEmail } from 'validator';
-
+import r_planet from '@public/assets/images/r-planet.jpeg'
 
 const ContactMe = () => {
   const { de, en, lang, setLang } = useContext(UserContext)
@@ -69,29 +69,53 @@ const ContactMe = () => {
     getMenu()
 
   }, [de, en])
+  // bg-[#00152491] 
   return (
     <motion.section
-      initial={{ opacity: 0, scale: 0.2, y: 2 }}
-      whileInView={{ scale: 1, opacity: 1, type: "ease", y: 0 }}
-      transition={{ duration: 1.5 }}
-      className='max-container bg-[#00152491] rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
+
+      className='max-container rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
 
       {(msgEn && msgDe) && <>
-        <div className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>
+        <motion.div
+          initial={{ opacity: 0, y: 2, x: -500 }}
+          whileInView={{ opacity: 1,type: "ease", y: 0, x: 0 }}
+          transition={{ duration: 0.3, }}
+          className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>
 
-          <div className='flex justify-between '>
+          {/* <div className='flex justify-between '>
             <div className='hover:bg-[#2352344d] cursor-pointer  rounded-lg px-10 py-4'>
               <Image src={video} width={60} height={30} />
             </div>
             <div className='hover:bg-[#2352344d] cursor-pointer  rounded-lg px-10 py-4'>
               Calendar
             </div>
-          </div>
+          </div> */}
 
 
           <div className='flex flex-col gap-6 h-auto py-1 max-md:text-gray-500'>
             <h1 className='text-center text-3xl whitespace-nowrap max-lg:text-xl  font-montserrat text-white-400 w-full'>{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.title : msgDe.filter((ms) => ms.id === 'contact')[0].contact.title}</h1>
-            <p className='text-white-400 font-montserrat pl-10'>{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.desc : msgDe.filter((ms) => ms.id === 'contact')[0].contact.desc}</p>
+            {/* <p className='text-white-400 font-montserrat pl-10'>{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.desc : msgDe.filter((ms) => ms.id === 'contact')[0].contact.desc}</p> */}
+
+            {/* start */}
+            <form
+              className='w-full font-palanquin flex flex-col items-start gap-4'
+              ref={form1}
+              onSubmit={sendEmail}>
+              <div className='flex flex-col gap-1 w-full'>
+                <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName}</label>
+                <input name='fullName' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-1 outline-none border-none' />
+              </div>
+              <div className='flex flex-col gap-1 w-full'>
+                <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email}</label>
+                <input name='email' type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email} className='px-2 w-[100%] py-1 outline-none border-none' />
+              </div>
+              <div className='flex flex-col gap-1 w-full'>
+                <label className='text-white-400' htmlFor="message">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message}</label>
+                <textarea name="message" id="" cols="25" rows="5" value={message} onChange={(e) => setMessage(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message} className='px-2 outline-none py-1'></textarea>
+              </div>
+              <button type='submit' className='self-stretch border-1 border-white-400 w-32 h-12 z-20 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-2xl'>{!lang ? 'send' : 'senden'}</button>
+            </form>
+            {/* end */}
             <div className='flex gap-5 text-white-400'>
               <FaPhone style={{ transform: 'scaleX(-1)' }} />
               <a href={`tel:+49216485282`} className="hover:text-blue-500 transition-colors">
@@ -126,31 +150,6 @@ const ContactMe = () => {
             </a>
 
           </div>
-        </div>
-
-        <div className='max-lg:w-full w-[60%] flex flex-col justify-center items-start gap-2 font-palanquin'>
-
-
-          <form
-            className='w-full font-palanquin flex flex-col items-start gap-4'
-            ref={form1}
-            onSubmit={sendEmail}>
-            <div className='flex flex-col gap-1 w-full'>
-              <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName}</label>
-              <input name='fullName' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-2 outline-none border-none' />
-            </div>
-            <div className='flex flex-col gap-1 w-full'>
-              <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email}</label>
-              <input name='email' type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email} className='px-2 w-[100%] py-2 outline-none border-none' />
-            </div>
-            <div className='flex flex-col gap-1 w-full'>
-              <label className='text-white-400' htmlFor="message">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message}</label>
-              <textarea name="message" id="" cols="25" rows="6" value={message} onChange={(e) => setMessage(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message} className='px-2 outline-none py-1'></textarea>
-            </div>
-            <button type='submit' className='self-stretch border-1 border-white-400 w-36 h-14 z-20 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-2xl'>{!lang ? 'send' : 'senden'}</button>
-          </form>
-
-
           <ToastContainer
             position="bottom-center"
             autoClose={3000}
@@ -162,9 +161,19 @@ const ContactMe = () => {
             draggable
             pauseOnHover
           />
-          <div className='flex gap-5'>
-          </div>
-        </div>
+        </motion.div>
+
+        {/* <div className='bg-earth earth'> */}
+        <motion.img
+          src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32" alt=""
+          initial={{ x: 500}}
+          whileInView={{ x: 0 }}
+          transition={{ duration: 0.5, type: "ease", }}
+        />
+        {/* <div className='bg-earth w-[400px] ring-4 ring-red-400 '></div> */}
+
+        
+        {/* </div> */}
 
 
       </>}

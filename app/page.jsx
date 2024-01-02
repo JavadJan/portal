@@ -67,9 +67,8 @@ const Home = () => {
                         <section id="project" className='h-auto bg-[#001524] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="max-sm:px-0 px-[3%] bg-planet h-fit py-28 relative overflow-hidden">
+                        <section id="contact-me" className="h-fit bg-planet max-sm:px-0 px-[3%] py-28 relative overflow-hidden">
                             <motion.div className="bg-stars absolute w-[90%] top-0 h-[90%] overflow-hidden brightness-75 bg-contain" style={{ y: startContact }}></motion.div>
-
                             <ContactMe />
                             <motion.img
                                 animate={{ y: -10 }}

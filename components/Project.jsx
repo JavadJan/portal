@@ -41,7 +41,7 @@ export const Project = ({ project }) => {
                 >
                     <span className='font-bold'>Tools: </span>
                     {project.tech.map((t , index) => {
-                        return <span className='flex items-center text-[12px]'>{project.tech.length-1 === index ? t : t+','}</span>
+                        return <span className='flex items-center justify-center text-[12px] mt-1'>{project.tech.length-1 === index ? t : t+','}</span>
                     })}
                 </div>
             </div>

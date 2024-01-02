@@ -148,22 +148,39 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
 }
 .card{
   
+  transition: all 0.7s ease-in-out;
 }
 .card:hover{
-  transition: all 0.7s ease-in-out;
   transform:scale(0.9) skew(5deg, 1deg) translate(5px, 8px);
   box-shodow:20px 20px  20px 50px #000;
   /* margin:2rem; */
   /* animation: rotate 1s 1.4s linear; */
 }
-.card-desc:hover{
+.card-desc{
   transition: all 0.7s ease-in;
+}
+.card-desc:hover{
   transform:scale(1) translate(8px, -5px);
   /* text-shadow: -5px 5px 6px rgba(0,0,0,0.6); */
   /* text-shadow: -15px 4px 11px #000000; */
   text-shadow: -14px 16px 11px #000000;
   /* text-shadow: -29px 33px 29px rgba(0,0,0,0.6); */
   line-height:1.8rem;
+}
+
+.earth {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+  animation: spin 30s linear alternate infinite;
+}
+
+@keyframes spin {
+  100% {
+    background-position: 100%;
+  }
 }
 
 
