@@ -77,8 +77,8 @@ const ContactMe = () => {
 
       {(msgEn && msgDe) && <>
         <motion.div
-          initial={{ opacity: 0, y: 2, x: -500 }}
-          whileInView={{ opacity: 1,type: "ease", y: 0, x: 0 }}
+          initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: -500 } : { opacity: 0, y: 2, x: -100 }}
+          whileInView={{ opacity: 1, type: "ease", y: 0, x: 0 }}
           transition={{ duration: 0.3, }}
           className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>
 
@@ -166,13 +166,13 @@ const ContactMe = () => {
         {/* <div className='bg-earth earth'> */}
         <motion.img
           src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32" alt=""
-          initial={{ x: 500}}
+          initial={window.innerWidth > 780 ? { opacity: 0, y: 2, x: 500 } : { opacity: 0, y: 2, x: 100 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 0.5, type: "ease", }}
         />
         {/* <div className='bg-earth w-[400px] ring-4 ring-red-400 '></div> */}
 
-        
+
         {/* </div> */}
 
 
