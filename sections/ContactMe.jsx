@@ -166,7 +166,7 @@ const ContactMe = () => {
         {/* <div className='bg-earth earth'> */}
         <motion.img
           src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32" alt=""
-          initial={window.innerWidth > 780 ? { opacity: 0, y: 2, x: 500 } : { opacity: 0, y: 2, x: 100 }}
+          initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: 500 } : { opacity: 0, y: 2, x: 100 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 0.5, type: "ease", }}
         />
