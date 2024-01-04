@@ -16,6 +16,7 @@ export const Project = ({ project }) => {
             transition: {
                 duration: 0.7,
                 ease: "linear",
+                delay:2
             }
         }
     }
@@ -40,14 +41,16 @@ export const Project = ({ project }) => {
 
                 >
                     <span className='font-bold'>Tools: </span>
-                    {project.tech.map((t , index) => {
-                        return <span className='flex items-center justify-center text-[12px] mt-1'>{project.tech.length-1 === index ? t : t+','}</span>
+                    {project.tech.map((t, index) => {
+                        return <span className='flex items-center justify-center text-[12px] mt-1'>{project.tech.length - 1 === index ? t : t + ','}</span>
                     })}
                 </div>
             </div>
 
-            <motion.div className='text-center bg-[#0478e4] h-12 text-white py-3 absolute bottom-0 w-full flex gap-5 justify-center items-center'
+            <motion.div
+                className={`text-center bg-[#0478e4] h-12 text-white py-3 absolute bottom-0  w-full flex gap-5 justify-center items-center`}
                 variants={variant}
+
             >
                 <a target="_blank" className='btn px-4 py-2 ' href={project.demo}>Demo</a>
                 <a target="_blank" className='btn px-4 py-2' href={project.github}>Github</a>
