@@ -72,14 +72,14 @@ const ContactMe = () => {
   return (
     <motion.section
 
-      className='max-container rounded-3xl px-[5%] flex justify-between items-center max-md:flex-col  max-md:gap-10 gap-[1%] py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
+      className='max-container rounded-3xl px-[5%] flex justify-between items-center max-md:flex-col  max-md:gap-10 gap-0 max-lg:py-0 py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
 
       {(msgEn && msgDe) && <>
         <motion.div
-          initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: -500 } : { opacity: 0, y: 2, x: -100 }}
+          initial={window.innerWidth >= 768 ? { opacity: 0, y: 2, x: -500 } : { opacity: 0, y: 2, x: -50 }}
           whileInView={{ opacity: 1, type: "ease", y: 0, x: 0 }}
           transition={{ duration: 0.3, }}
-          className='max-md:w-full w-[500px] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6 ring-1 ring-green-700'>
+          className='max-md:w-full w-[500px] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 max-lg:mt-0 rounded-3xl max-sm:mb-10 flex flex-col justify-between max-lg:gap-6'>
 
           {/* <div className='flex justify-between '>
             <div className='hover:bg-[#2352344d] cursor-pointer  rounded-lg px-10 py-4'>
@@ -102,17 +102,17 @@ const ContactMe = () => {
               onSubmit={sendEmail}>
               <div className='flex flex-col gap-1 w-full'>
                 <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName}</label>
-                <input name='fullName' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-1 outline-none border-none' />
+                <input name='fullName' type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.fullName : msgDe.filter((ms) => ms.id === 'contact')[0].contact.fullName} className='px-2 w-[100%] py-2 outline-none border-none' />
               </div>
               <div className='flex flex-col gap-1 w-full'>
                 <label className='text-white-400' htmlFor="email">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email}</label>
-                <input name='email' type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email} className='px-2 w-[100%] py-1 outline-none border-none' />
+                <input name='email' type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.email : msgDe.filter((ms) => ms.id === 'contact')[0].contact.email} className='px-2 w-[100%] py-2 outline-none border-none' />
               </div>
               <div className='flex flex-col gap-1 w-full'>
                 <label className='text-white-400' htmlFor="message">{!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message}</label>
                 <textarea name="message" id="" cols="25" rows="5" value={message} onChange={(e) => setMessage(e.target.value)} placeholder={!lang ? msgEn.filter((ms) => ms.id === 'contact')[0].contact.message : msgDe.filter((ms) => ms.id === 'contact')[0].contact.message} className='px-2 outline-none py-1'></textarea>
               </div>
-              <button type='submit' className='self-stretch border-1 border-white-400 w-32 h-12 z-20 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-2xl'>{!lang ? 'send' : 'senden'}</button>
+              <button type='submit' className='self-stretch border-1 text-center border-white-400 w-32 h-12 z-20 bg-[#0766AD] rounded-lg cursor-pointer text-white-400 text-xl'>{!lang ? 'send' : 'senden'}</button>
             </form>
             {/* end */}
             <div className='flex gap-5 text-white-400'>
@@ -137,7 +137,7 @@ const ContactMe = () => {
             </div>
 
           </div>
-          <div className='w-full flex justify-center items-center mb-4 gap-2 md:mb-1'>
+          <div className='w-full flex justify-center items-center my-4 gap-2  md:mb-1'>
             <a href='https://linkedin.com/in/javad-khavari' target='_blank' className='cursor-pointer p-2  flex justify-center items-center w-[35px] h-[35px] ring-1 ring-white-400 rounded-full transition-all duration-100 ease-in hover:bg-white-400 '>
               <Image src={linkedin} width={25} height={25} />
             </a>
@@ -163,28 +163,12 @@ const ContactMe = () => {
         </motion.div>
 
 
-        {/* <div className='bg-earth earth'> */}
-        {/* <motion.img
-          src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32" alt=""
-          initial={window.innerWidth > 768 ? { y: 2, x: 500 } : { y: 2, x: 100 }}
-          whileInView={{ type: "ease", y: 0, x: 0 }}
-          transition={{ duration: 0.5,  }}
-        /> */}
-        <motion.div className='max-md:w-[400px] w-[450px] max-md:h-[400px] h-[450px] max-md:relative absolute`1`` right-10 -z-10 lg:brightness-75  earth bg-no-repeat bg-cover' animate={{
-          // rotateX: [0, 360],
-          // rotateY: [0, 360],
-          // rotateZ: [0, 360], 
-          // transition: {
-          //   duration: 10,
-          //   repeat: Infinity,
-          //   ease: 'linear',
-          // }
-        }} ></motion.div>
 
-
-        {/* https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32 */}
-        {/* </div> */}
-
+        <motion.div className='max-md:w-[350px] w-[450px] max-md:h-[350px] h-[450px] max-md:relative absolute max-md:right-1 right-10 -z-10 lg:brightness-75  earth bg-no-repeat bg-cover'
+          initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: 500 } : { y: 2, x: 50 }}
+          whileInView={{ opacity: 1, y: 0, type: "ease", x: 0 }}
+          transition={{ duration: 0.3 }}
+        ></motion.div>
 
       </>}
     </motion.section>

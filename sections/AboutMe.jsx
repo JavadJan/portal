@@ -37,7 +37,7 @@ const AboutMe = () => {
           {(aboutDe && aboutEn) && <div className='flex justify-end items-end columns-3 gap-10'>
             {!lang ?
               aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
-                return <div className='col-span-2 flex flex-col items-end'>
+                return <div className='col-span-2 flex flex-col items-start'>
                   <h1 className='mb-2'>{cr.title}</h1>
                   <a href={cr.reference} target='_blank' className='inline-block'>
                     <img src={cr.img} alt={cr.title} className=' cursor-pointer h-[100px] w-[130px]' />
@@ -46,7 +46,7 @@ const AboutMe = () => {
               })
               :
               aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.certificate.map(cr => {
-                return <div className='col-span-3 flex flex-col items-end'>
+                return <div className='col-span-3 flex flex-col items-start'>
                   <h1 className='mb-2'>{cr.title}</h1>
                   <a href={cr.reference} target='_blank' className='inline-block'>
                     <img src={cr.img} alt={cr.title} className=' cursor-pointer h-[100px] w-[130px]' />
