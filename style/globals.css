@@ -169,19 +169,26 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
 }
 
 .earth {
-  height: 500px;
-  width: 500px;
+  background: url(https://cdn.pixabay.com/animation/2023/05/22/20/17/20-17-27-433_512.gif);
   border-radius: 50%;
   background-size: cover;
-  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
-  animation: spin 30s linear alternate infinite;
+  box-shadow: inset 16px 0 40px 3px rgb(0, 0, 0), inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
+  /* animation-name: rotateEarth; */
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-@keyframes spin {
-  100% {
-    background-position: 100%;
+
+
+/* @keyframes rotateEarth {
+  from {
+    transform: rotate(0deg);
   }
-}
+  to {
+    transform: rotate(360deg);
+  }
+} */
 
 
 /* hover */
@@ -220,7 +227,7 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
   background: linear-gradient(to right, white, #0478e4); /* Gradient from white to #0478e4 */
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease-in;
+  /* transition: transform 0.3s ease-in; */
 }
 .text-hover::after {
   content: '';
@@ -231,7 +238,7 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
   background: linear-gradient(to left, white, #0478e4); /* Gradient from white to #0478e4 */
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease-in;
+  /* transition: transform 0.3s ease-in; */
 }
 
 .text-hover::before {
@@ -245,6 +252,8 @@ background: linear-gradient(0deg, rgba(0, 51, 0, 1) 0%, rgba(0, 51, 0, 1) 30%, r
 .text-hover:hover::before,
 .text-hover:hover::after {
   transform: scaleY(0);
+  transition: transform 0.3s ease-in;
+
 }
 /* end hover */
 

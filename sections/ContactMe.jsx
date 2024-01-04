@@ -29,7 +29,6 @@ const ContactMe = () => {
 
 
 
-
   const sendEmail = async (e) => {
     e.preventDefault();
     console.log(form1.current)
@@ -73,14 +72,14 @@ const ContactMe = () => {
   return (
     <motion.section
 
-      className='max-container rounded-3xl px-[5%] flex justify-between max-sm:flex-col  gap-[3%] max-md:gap-5 py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
+      className='max-container rounded-3xl px-[5%] flex justify-between items-center max-md:flex-col  max-md:gap-10 gap-[1%] py-10 max-lg:h-auto lg:h-[65vh] relative z-20'>
 
       {(msgEn && msgDe) && <>
         <motion.div
           initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: -500 } : { opacity: 0, y: 2, x: -100 }}
           whileInView={{ opacity: 1, type: "ease", y: 0, x: 0 }}
           transition={{ duration: 0.3, }}
-          className='max-lg:w-full w-[40%] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6'>
+          className='max-md:w-full w-[500px] bg-[#183D3Da4] max-lg:h-auto min-h-[80vh] h-auto  pt-6 pb-10 px-8 -mt-24 max-lg:mt-0 rounded-3xl max-sm:mb-10 relative flex flex-col justify-between max-lg:gap-6 ring-1 ring-green-700'>
 
           {/* <div className='flex justify-between '>
             <div className='hover:bg-[#2352344d] cursor-pointer  rounded-lg px-10 py-4'>
@@ -163,16 +162,27 @@ const ContactMe = () => {
           />
         </motion.div>
 
+
         {/* <div className='bg-earth earth'> */}
-        <motion.img
+        {/* <motion.img
           src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32" alt=""
-          initial={window.innerWidth > 768 ? { opacity: 0, y: 2, x: 500 } : { opacity: 0, y: 2, x: 100 }}
-          whileInView={{ x: 0 }}
-          transition={{ duration: 0.5, type: "ease", }}
-        />
-        {/* <div className='bg-earth w-[400px] ring-4 ring-red-400 '></div> */}
+          initial={window.innerWidth > 768 ? { y: 2, x: 500 } : { y: 2, x: 100 }}
+          whileInView={{ type: "ease", y: 0, x: 0 }}
+          transition={{ duration: 0.5,  }}
+        /> */}
+        <motion.div className='max-md:w-[400px] w-[450px] max-md:h-[400px] h-[450px] max-md:relative absolute`1`` right-10 -z-10 lg:brightness-75  earth bg-no-repeat bg-cover' animate={{
+          // rotateX: [0, 360],
+          // rotateY: [0, 360],
+          // rotateZ: [0, 360], 
+          // transition: {
+          //   duration: 10,
+          //   repeat: Infinity,
+          //   ease: 'linear',
+          // }
+        }} ></motion.div>
 
 
+        {/* https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/earth.png?alt=media&token=8d849484-782d-45ce-8b0c-acaff0966d32 */}
         {/* </div> */}
 
 
