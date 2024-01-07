@@ -28,6 +28,7 @@ export const Project = ({ project }) => {
             onHoverEnd={() => setIsHovered(false)}
             onTouchStart={() => setIsHovered(true)}
             onTouchEnd={() => setIsHovered(false)}
+            onTouchMove={()=>{setIsHovered(true)}}
         >
 
             <img src={project.img} alt="" className='object-cover h-1/3 brightness-[0.85] hover:backdrop-blur-xl hover:bg-white/30' />

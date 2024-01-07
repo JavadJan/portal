@@ -51,10 +51,10 @@ const Home = () => {
                     <>
                         {/* bg-[#160F30] */}
                         {/* bg-[#001524] */}
-                        <section className={`px-28 max-lg:px-[3%] w-[100%] z-50 sticky top-0 ${active ? 'scroll_active bg-white lg:bg-white text-black' : 'text-white bg-planet'}`}>
+                        <section className={`snap-start px-28 max-lg:px-[3%] w-[100%] z-50 sticky top-0 ${active ? 'scroll_active bg-white lg:bg-white text-black' : 'text-white bg-planet'}`}>
                             <Nav />
                         </section>
-                        <section ref={ref} id="home" className="bg-planet relative top-0 text-white-400 overflow-hidden">
+                        <section ref={ref} id="home" className="snap-start bg-planet relative top-0 text-white-400 overflow-hidden">
                             <motion.div className="bg-stars absolute top-1 h-[95%] w-full brightness-75 bg-contain" style={{ y: startBg }}></motion.div>
                             <motion.img style={{ y: yBg, x: xBg }}
                                 className="absolute bottom-20 right-[5%] w-[15%] h-[15%] object-contain"
@@ -64,10 +64,10 @@ const Home = () => {
                         </section>
 
                         {/* bg-[#F6F6F6] */}
-                        <section id="project" className='h-auto bg-[#001524] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
+                        <section id="project" className='snap-start h-auto bg-[#001524] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="h-fit bg-planet max-sm:px-0 px-[3%] py-28 relative overflow-hidden">
+                        <section id="contact-me" className="snap-end h-fit bg-planet max-sm:px-0 px-[3%] py-28 relative overflow-hidden">
                             <motion.div className="bg-stars absolute w-[90%] top-0 h-[90%] overflow-hidden brightness-75 bg-contain" style={{ y: startContact }}></motion.div>
                             <ContactMe />
                             <motion.img
@@ -81,7 +81,7 @@ const Home = () => {
                                 src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro2.png?alt=media&token=9e3f06a2-0f8e-40bb-9901-3474d5748536" alt="" className="absolute object-cover top-[50%] left-[5%] w-[200px] brightness-50" />
                         </section>
 
-                        <section id="about-me" className="bg-planet relative">
+                        <section id="about-me" className="snap-start bg-planet relative">
 
                             <div className="w-full h-full bg-[#235952a4] section padding text-white">
 
@@ -91,11 +91,11 @@ const Home = () => {
                                 />
                             </div>
                         </section>
-                        <section id="skills" className='section padding bg-[#F3FDE8] h-[65vh] max-sm:h-[45vh] overflow-hidden'>
+                        <section id="skills" className='snap-center section padding bg-[#F3FDE8] h-[65vh] max-sm:h-[45vh] overflow-hidden'>
                             <Skills />
                         </section>
 
-                        <section id="footer" className='footer padding-footer bg-black padding-t padding-x'>
+                        <section id="footer" className='snap-start footer padding-footer bg-black padding-t padding-x'>
                             <Footer />
                         </section>
                     </>
