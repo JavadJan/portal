@@ -1,5 +1,6 @@
 "use client"
 import Nav from "@components/Nav"
+import { ChatRobot } from "@components/ChatRobot"
 import { UserContext } from "@context/Provider"
 import AboutMe from "@sections/AboutMe"
 import ContactMe from "@sections/ContactMe"
@@ -38,7 +39,7 @@ const Home = () => {
     const rocket = useTransform(scrollYProgress, [0, 1], ["0%", "-400%"])
     return (
 
-        <main className="relative">
+        <main className="">
             {
                 !de && !en ?
                     <div class='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
@@ -54,7 +55,8 @@ const Home = () => {
                         <section className={`snap-start px-28 max-lg:px-[3%] w-[100%] z-50 sticky top-0 ${active ? 'scroll_active bg-white lg:bg-white text-black' : 'text-white bg-planet'}`}>
                             <Nav />
                         </section>
-                        <section ref={ref} id="home" className="snap-start bg-planet relative top-0 text-white-400 overflow-hidden">
+                        <ChatRobot />
+                        <section ref={ref} id="home" className="snap-center bg-planet relative top-0 text-white-400 overflow-hidden">
                             <motion.div className="bg-stars absolute top-1 h-[95%] w-full brightness-75 bg-contain" style={{ y: startBg }}></motion.div>
                             <motion.img style={{ y: yBg, x: xBg }}
                                 className="absolute bottom-20 right-[5%] w-[15%] h-[15%] object-contain"
@@ -67,7 +69,7 @@ const Home = () => {
                         <section id="project" className='snap-start h-auto bg-[#001524] sm:px-16 px-3 sm:py-24 py-6 relative z-20'>
                             <Projects />
                         </section>
-                        <section id="contact-me" className="snap-end h-fit bg-planet max-sm:px-0 px-[3%] py-32 relative overflow-hidden">
+                        <section id="contact-me" className="snap-start h-fit bg-planet max-sm:px-0 px-[3%] py-36 relative overflow-hidden">
                             <motion.div className="bg-stars absolute w-[90%] top-0 h-[90%] overflow-hidden brightness-75 bg-contain" style={{ y: startContact }}></motion.div>
                             <ContactMe />
                             <motion.img
@@ -82,9 +84,7 @@ const Home = () => {
                         </section>
 
                         <section id="about-me" className="snap-start bg-planet relative">
-
                             <div className="w-full h-full bg-[#235952a4] section padding text-white">
-
                                 <AboutMe />
                                 <img src="https://firebasestorage.googleapis.com/v0/b/myprojects-b250e.appspot.com/o/astro.png?alt=media&token=120ee86e-2168-485f-b6f2-a4b996ef7f93" alt=""
                                     className="absolute max-md:bottom-[-10px] bottom-[-15px] max-sm:right-0 right-14 max-md:w-[170px] w-[270px]"

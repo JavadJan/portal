@@ -18,11 +18,15 @@ import email1 from './email.svg'
 import github from './github.svg'
 import linkedin from './linkedin.svg'
 import location from './location.svg'
+import chatbot from './Chatbot.svg'
 import video from './video.svg'
 import logo from './logo.svg'
+import send from './Send.svg'
 import logo2 from './logo.png'
 
 export {
+    send,
+    chatbot,
     logo2,
     logo,
     video,

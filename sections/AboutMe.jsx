@@ -90,7 +90,9 @@ const AboutMe = () => {
           <br />
           {!lang ? aboutEn.filter(a => a.id === 'aboutMe')[0].aboutMe.passion : aboutDe.filter(a => a.id === 'aboutMe')[0].aboutMe.passion}</p>}
 
-        <div className='flex-1'></div>
+        <div className='flex-1 flex justify-center items-center'>
+          <a href="/assets/fullstak-developer.pdf" target='_blank' download="fullstak-developer.pdf">Download CV</a>
+        </div>
 
 
       </div>
